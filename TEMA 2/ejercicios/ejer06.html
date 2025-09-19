@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        6. Confirmación de datos
+        o Pide el nombre y la edad con prompt.
+        o Usa confirm para preguntar: ¿Tus datos son correctos: [nombre],
+        [edad]?
+        o Si confirma, muestra Datos guardados.
+        o Si cancela, muestra Datos descartados.
+        */
+
+        nombre = prompt("Introduce tu nombre")
+        edad = prompt("Introduce tu edad")
+
+        pregunta = confirm("¿Tus datos son correctos: " + nombre + ", " + edad + "?")
+
+        if (pregunta == true) {
+            alert("Datos guardados.")
+        }
+        else {
+            alert("Datos descartados.")
+        }
+    </script>
+</body>
+</html>
