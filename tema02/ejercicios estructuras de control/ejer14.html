@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 14. Haz un programa para que el usuario juegue a adivinar un número. Obtén un número al azar (busca por internet cómo se hace o simplemente guarda el número que quieras en una variable) y ve pidiendo al usuario que introduzca un número. Si es el que busca le dices que lo ha encontrado y si no le mostrarás si el número que busca el mayor o menor que el introducido. El juego acaba cuando el usuario encuentra el número o cuando pulsa en ‘Cancelar’ (en ese caso le mostraremos un mensaje de que ha cancelado el juego). (1 punto) -->
+
+    <script>
+        var contra = 45;
+        var numero;
+
+        do {
+            numero = prompt("Introduce número.");
+
+            if (numero != null) {
+                if (numero < contra) alert("El número que buscas es mayor.");
+                if (numero > contra) alert("El número que buscas es menor.");
+            }
+
+        } while (contra != numero && numero != null)
+
+        if (contra == numero) alert("¡Has ganado!");
+        else alert("Has cancelado el juego.");
+    </script>
+</body>
+</html>

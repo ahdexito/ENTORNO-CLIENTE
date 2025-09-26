@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 13. Repite el ejercicio anterior utilizando el bucle do...while. Solicita al usuario que introduzca un número para indicar la cantidad de líneas que quiere imprimir. (0,5puntos) -->
+
+    <script>
+        var caracter = "*";
+        var lineas = prompt("Introduce cantidad de líneas.");
+        var resultado = "";
+
+        do {
+            resultado += caracter;
+            console.log(resultado);
+
+            lineas--;
+        } while (lineas > 0)
+
+    </script>
+</body>
+</html>
