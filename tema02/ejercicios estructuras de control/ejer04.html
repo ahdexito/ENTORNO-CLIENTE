@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 4. Crea un programa que lea tres notas, calcule la media e indique si la persona está aprobada o suspensa. (if) (0,5 puntos) -->
+
+    <script>
+        var  nota1 = parseInt(prompt("Introduce la primera nota."));
+        var nota2 = parseInt(prompt("Introduce la segunda nota."));
+        var nota3 = parseInt(prompt("Introduce la tercera nota."));
+
+        var media = (nota1 + nota2 + nota3) / 3;
+
+        if (media >= 5) {
+            alert("Has aprobado. Tu nota media es un " + media.toFixed(2));
+        }
+        else alert("Has suspendido. Tu nota media es un " + media.toFixed(2));
+
+    </script>
+</body>
+</html>

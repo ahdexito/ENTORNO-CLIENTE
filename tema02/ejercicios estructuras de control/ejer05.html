@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Fruta Sana</title>
+    </head>
+    <body>
+        <input id="myInput" type="text" value="Tutti Frutti">
+        <button onclick="checkFruit()">Check Fruit</button>
+        <p id="demo"></p>
+
+        <!-- 5. Sobre frutasana.html: (switch-if) (0,75 puntos) 
+            − Comprueba su funcionamiento y que no tiene errores. Mejóralo! 
+            − A la sentencia switch le falta un default. Añádelo al final de la sentencia switch, y pon el texto “Nunca he visto esa fruta”. 
+            − Elimina las sentencias switch y case. Debes emplear la sentencia if para reproducir el mismo comportamiento.(frutasana_if.html) -->
+
+        <!--
+        <script>
+            function checkFruit() {
+                var text;
+                var fruits = document.getElementById("myInput").value;
+                switch(fruits) {
+                    case "Banana":
+                        text = "Banana is good!";
+                        break;
+                    case "Orange":
+                        text = "I am not a fan of orange.";
+                        break;
+                    case "Apple":
+                        text = "How you like them apples?";
+                        break;
+                    default: 
+                        text = "Nunca he visto esa fruta";
+                        break;
+                }
+                document.getElementById("demo").innerHTML = text;
+            }
+        </script>
+        -->
+
+        <script>
+            function checkFruit() {
+                var text;
+                var fruits = document.getElementById("myInput").value;
+                if (fruits == "Banana")
+                    text = "Banana is good!";
+                else if (fruits == "Orange")
+                    text = "I am not a fan of orange.";
+                else if (fruits == "Apple")
+                    text = "How you like them apples?";
+                else text = "Nunca he visto esa fruta.";
+                
+                document.getElementById("demo").innerHTML = text;
+            }
+        </script>
+    </body>
+</html>

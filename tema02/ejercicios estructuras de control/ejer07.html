@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 7. En un restaurante los clientes pueden pedir menú de carne, pescado o verdura, utilizando el comando prompt(). Vamos a implementar una aplicación que recomiende al cliente la bebida más adecuada dependiendo del tipo de menú que haya pedido el cliente: (switch)(0,75 puntos)
+        a. Si pide carne se le recomendará como bebida “Vino tinto”.
+        b. Si pide pescado se le ofrecerá “Vino blanco”.
+        c. Si pide verdura se le ofrecerá “Agua”.
+        d. Si no elije el menú de la lista aparecerá la frase “Escriba carne, pescado o verdura.” -->
+
+    <script>
+        var menu = prompt("¿Qué menú desea pedir? (carne, pescado, verdura)");
+
+        switch (menu) {
+            case "carne":
+                alert("Para beber le recomendamos vino tinto.");
+                break;
+            case "pescado":
+                alert("Para beber le recomendamos vino blanco.");
+                break;
+            case "verdura":
+                alert("Para beber le recomendamos agua.")
+                break;
+            default:
+                alert("Escriba carne, pescado o verdura.");
+                break;
+        }
+    </script>
+</body>
+</html>

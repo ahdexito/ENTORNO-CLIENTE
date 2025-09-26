@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 8. Escribe un programa que imprima por consola los números pares del 2 al 30 excepto los que sean múltiplos de 3.(for con contador)(0,75puntos) -->
+
+    <script>
+        var resultado = "";
+
+        for (let i = 2; i <= 30; i++) {
+            if (i % 2 == 0) {
+                if (i % 3 != 0) {
+                    resultado += i + " | ";
+                }
+            }
+        }
+
+        console.log(resultado);
+
+    </script>
+</body>
+</html>
