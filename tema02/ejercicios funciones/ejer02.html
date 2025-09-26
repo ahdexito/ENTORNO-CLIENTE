@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 2. Haz una arrow function que devuelva el cubo del número pasado como parámetro y pruébala desde la consola. Escríbela primero en la forma habitual y luego la “traduces” a arrow function. (0,5 puntos) -->
+
+    <script>
+        // función normal
+        var potencia = function(numero) {
+            numero = numero * numero * numero;
+            return numero;
+        }
+
+        // función arrow
+        var potenciaArrow = numero => numero * numero * numero;
+
+        // solicitud de entrada
+        var numero = prompt("Introduce número.");
+
+        // uso de función normal
+        console.log("Función normal: el cubo del número " + numero + " es " + potencia(numero));
+
+        // uso de función arrow
+        console.log("Función arrow: el cubo del número " + numero + " es " + potenciaArrow(numero));
+    </script>
+</body>
+</html>

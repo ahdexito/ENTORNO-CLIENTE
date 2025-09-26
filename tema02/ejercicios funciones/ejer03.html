@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 3. Realiza un programa definiendo todas las funciones necesarias para las actividades anteriores (U2-Estructuras de control). Como nombre de la función utiliza ‘actividad’+nº (actividad2(), actividad3(), etc.).Sigue utilizando la salida solicitada en la actividad para mostrar el resultado o visualiza una prueba de la función en consola. En las actividades que veas pertinente, utiliza arrow functions. Recuerda utilizar los comentarios para enfatizar tu explicación. (7 puntos) -->
+
+    <script>
+        // EJERCICIO 1
+        var ejer01 = function() {
+            var numero = prompt("Introduce un número.");
+
+            if (numero > 0) {
+                alert("El número " + numero + " es positivo.");
+            }
+            else if (numero < 0) {
+                alert("El número " +  numero + " es negativo.");
+            }
+            else alert("El número es 0.");
+        }
+
+        // EJERCICIO 2
+        var ejer02 = function() {
+            var edad = prompt("Introduce tu edad.");
+
+            if (edad < 18) {
+                alert("Eres menor de edad.");
+            }
+            else if (edad < 65) {
+                alert("Eres una persona adulta.");
+            }
+            else alert("Eres una persona anciana.");
+        }
+
+        // EJERCICIO 3
+        var ejer03 = function() {
+            var numero1 = prompt("Introduce el primer número.");
+            var numero2 = prompt("Introduce el segundo número.");
+
+            if (numero1 > numero2) {
+                alert("El número mayor es el " + numero1);
+            }
+            else alert("El número mayor es el " + numero2);
+        }
+
+        // EJERCICIO 4
+        var ejer04 = function() {
+            var nota1 = parseInt(prompt("Introduce la primera nota."));
+            var nota2 = parseInt(prompt("Introduce la segunda nota."));
+            var nota3 = parseInt(prompt("Introduce la tercera nota."));
+
+            var media = (nota1 + nota2 + nota3) / 3;
+
+            if (media >= 5) {
+                alert("Has aprobado. Tu nota media es un " + media.toFixed(2));
+            }
+            else alert("Has suspendido. Tu nota media es un " + media.toFixed(2));
+        }
+
+        // EJERCICIO 6
+        var ejer06 = function() {
+            var numero = prompt("Introduce un número del 1 al 12.");
+            var mes;
+
+            switch (parseInt(numero)) {
+                case 1:
+                    mes = "Enero";
+                    break;
+                case 2:
+                    mes = "Febrero";
+                    break;
+                case 3:
+                    mes = "Marzo";
+                    break;
+                case 4:
+                    mes = "Abril";
+                    break;
+                case 5:
+                    mes = "Mayo";
+                    break;
+                case 6:
+                    mes = "Junio";
+                    break;
+                case 7:
+                    mes = "Julio";
+                    break;
+                case 8:
+                    mes = "Agosto";
+                    break;
+                case 9:
+                    mes = "Septiembre";
+                    break;
+                case 10:
+                    mes = "Octubre";
+                    break;
+                case 11:
+                    mes = "Noviembre";
+                    break;
+                case 12:
+                    mes = "Diciembre";
+                    break;
+                default:
+                    mes = "No corresponde con el número de un mes"
+                    break;
+            }
+
+            alert("El mes correspondiente al número " + numero + " es: " + mes);
+        }
+    </script>
+</body>
+</html>
