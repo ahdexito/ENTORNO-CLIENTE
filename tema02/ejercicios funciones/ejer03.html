@@ -103,12 +103,130 @@
                     mes = "Diciembre";
                     break;
                 default:
-                    mes = "No corresponde con el número de un mes"
+                    mes = "No corresponde con el número de un mes";
                     break;
             }
 
             alert("El mes correspondiente al número " + numero + " es: " + mes);
         }
+
+        // EJERCICIO 7
+        var ejer07 = function() {
+            var menu = prompt("¿Qué menú desea pedir? (carne, pescado, verdura)");
+
+            switch (menu) {
+                case "carne":
+                    alert("Para beber le recomendamos vino tinto.");
+                    break;
+                case "pescado":
+                    alert("Para beber le recomendamos vino blanco.");
+                    break;
+                case "verdura":
+                    alert("Para beber le recomendamos agua.");
+                    break;
+                default:
+                    alert("Escriba carne, pescado o verdura.");
+                    break;
+            }
+        }
+
+        // EJERCICIO 8
+        var ejer08 = function() {
+            var resultado = "";
+
+            for (let i = 2; i <= 30; i++) {
+                if (i % 2 == 0) {
+                    if (i % 3 != 0) {
+                        resultado += i + " | ";
+                    }
+                }
+            }
+
+            console.log(resultado);
+        }
+
+        // EJERCICIO 9
+        var ejer09 = function() {
+            for (let i = 5; i <= 300; i++) {
+                console.log(2 ** i);
+            }
+        }
+
+        // EJERCICIO 10
+        var ejer10 = function() {
+            var numero = 5;
+            var resultado = 1;
+
+            if (numero <= 0) {
+                console.log("No se puede calcular el factorial.");
+            }
+            else {
+                for (let i = numero; i > 0; i--) {
+                    resultado *= numero--; 
+                }
+
+            console.log("El resultado es " + resultado);
+            }
+        }
+
+        // EJERCICIO 11
+        var ejer11 = function() {
+            var ast = "*";
+            var resultado = "";
+
+            for (let i = 0; i < 12; i++) {
+                resultado += ast;
+                console.log(resultado);
+            }
+        }
+
+        // EJERCICIO 12
+        var ejer12 = function() {
+            var caracter = prompt("Introduce un carácter.");
+            var resultado = "";
+
+            let i = 0;
+            while (i < 12) {
+                resultado += caracter;
+                console.log(resultado);
+
+                i++;
+            }
+        }
+
+        // EJERCICIO 13
+        var ejer13 = function() {
+            var caracter = "*";
+            var lineas = prompt("Introduce cantidad de líneas.");
+            var resultado = "";
+
+            do {
+                resultado += caracter;
+                console.log(resultado);
+
+                lineas--;
+            } while (lineas > 0)
+        }
+
+        // EJERCICIO 14
+        var ejer14 = function() {
+            var contra = 45;
+            var numero;
+
+            do {
+                numero = prompt("Introduce número.");
+
+                if (numero != null) {
+                    if (numero < contra) alert("El número que buscas es mayor.");
+                    if (numero > contra) alert("El número que buscas es menor.");
+                }
+
+            } while (contra != numero && numero != null)
+
+            if (contra == numero) alert("¡Has ganado!");
+            else alert("Has cancelado el juego.");
+        }
+        
     </script>
 </body>
 </html>
