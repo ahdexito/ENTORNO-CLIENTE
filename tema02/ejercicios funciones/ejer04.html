@@ -11,8 +11,23 @@
         Llama a la función varias veces. (0,5 puntos) -->
         
         <script>
+            var funcion = function(num1, num2) {
 
-            
+                let resultado = "";
+
+                for (let i = 0; i < num1; i++) {
+                    resultado += num2 + " ";
+                    num2 *= 2;
+                }
+
+                console.log(resultado);
+            }
+
+            funcion(4, 6);
+
+            funcion(9, 3);
+
+            funcion(5, 8);
         </script>
 </body>
 </html>

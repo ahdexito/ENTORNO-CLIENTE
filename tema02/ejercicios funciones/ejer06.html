@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 6. Escribe un programa que solicite al usuario el radio de un círculo y luego calcule y muestre el área y el perímetro del círculo. (1 punto)
+    a. Solicita al usuario que ingrese el radio del círculo.
+    b. Define dos funciones: una para calcular el área del círculo y otra para calcular el perímetro delcírculo. 
+    c. Usa las fórmulas matemáticas apropiadas dentro de estas funciones para calcular el área (π * radio^2) y el perímetro (2 * π * radio) del círculo.
+    d. Llama a estas funciones con el radio proporcionado por el usuario como argumento.
+    e. Muestra los resultados del área y el perímetro al usuario.-->
+    
+    <script>
+        var radio = prompt("Introduce el radio");
+
+        const PI = 3.14159;
+        
+        var area = (radio) => {return PI * (radio * radio);};
+        var perimetro = (radio) => {return 2 * PI * radio;};
+
+        alert("El área del círculo es " + area(radio));
+        alert("El perímetro del círculo es " + perimetro(radio));
+    </script>
+</body>
+</html>
