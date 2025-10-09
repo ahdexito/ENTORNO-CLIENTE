@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 6. Escribir una función javascript que acepte como argumento una cadena de caracteres y reúna los espacios repetidos en un solo espacio. Una especie de compresor de espacios. (1,5 puntos)
+    Por ejemplo, tenemos la llamada actividad7("JavaScript    es  muy     fácil"), deberá devolver "JavaScript es muy fácil" -->
+</head>
+<body>
+    <script>
+        var entrada = "JavaScript         es  muy     fácil"
+
+        var comprimir_espacios = function(entrada) {
+            var resultado = "";
+            var espacio_antes = false;
+
+            // recorrer cada letra de la entrada
+            for (let i = 0; i < entrada.length; i++) {
+                // guardar letra en variable
+                var letra = entrada.charAt(i);
+
+                // si se encuentra un espacio
+                if (letra === " ") {
+                    // comprobar si no hubo otro antes y añadir 1
+                    if (!espacio_antes) resultado += " ";
+                    espacio_antes = true;
+                }
+                // si es una letra
+                else {
+                    // añadirla a resultado sin cambios
+                    resultado += letra;
+                    espacio_antes = false;
+                }
+            }
+
+            return resultado;
+        }
+
+        console.log(comprimir_espacios(entrada));
+    </script>
+</body>
+</html>
