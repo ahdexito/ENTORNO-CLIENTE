@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Escribe un programa donde realices la prueba y documentación de 10 métodos del objeto String. (2 puntos)
+    Manual: https://www.w3schools.com/jsref/jsref_obj_string.asp -->
+</head>
+<body>
+    <script>
+        //////////////////////////////////////////////
+        // 1. Devolver un carácter indicando el índice
+        var prueba1 = new String("Hola mundo");
+
+        // imprime "m"
+        console.log("Prueba 1: " + prueba1.charAt(5)) 
+
+
+        //////////////////////////////////////////////
+        // 2. Concatenar dos cadenas
+        var prueba2 = new String("!!!");
+
+        // imprime "Hola mundo!!!"
+        console.log("Prueba 2: " + prueba1.concat(prueba2));
+
+
+        //////////////////////////////////////////////
+        // 3. Extraer carácteres especificando 2 índices
+        var prueba3 = prueba1.substring(5, 10);
+
+        // imprime "mundo"
+        console.log("Prueba 3: " + prueba3);
+
+
+        //////////////////////////////////////////////
+        // 4. Reemplazar todas las instancias de un fragmento por otro
+        var prueba4 = prueba1.replaceAll("o", "???");
+
+        // imprime "H???la mund???"
+        console.log("Prueba 4: " + prueba4);
+
+        //////////////////////////////////////////////
+        // 5. Convierte el string a mayúsculas
+
+        // imprime "HOLA MUNDO"
+        console.log("Prueba 5: " + prueba1.toUpperCase());
+
+        //////////////////////////////////////////////
+        // 6. Elimina los espacios alrededor de la cadena
+
+        var prueba6 = new String("    Hola mundo    ");
+
+        // imprime "Hola mundo"
+        console.log("Prueba 6: " + prueba6.trim());
+
+        //////////////////////////////////////////////
+        // 7. Verifica si la cadena empieza por una 
+        // subcadena específicada y devuelve true o false
+
+        var verdadero = prueba1.startsWith("Hola");
+        var falso = prueba1.startsWith("mundo");
+
+        // imprime "true, false"
+        console.log("Prueba 7: " + verdadero + ", " + falso);
+
+        //////////////////////////////////////////////
+        // 8. Repite un número de veces el mismo string
+
+        var prueba8 = prueba1.repeat(3);
+
+        // imprime "Hola mundoHola mundoHola mundo"
+        console.log("Prueba 8: " + prueba8);
+
+        //////////////////////////////////////////////
+        // 9. Devuelve el tamaño de un string
+
+        // imprime "10"
+        console.log("Prueba 9: " + prueba1.length);
+
+        //////////////////////////////////////////////
+        // 10. Convierte el string a minúsculas
+
+        // imprime "hola mundo"
+        console.log("Prueba 10: " + prueba1.toLowerCase());
+
+    </script>
+</body>
+</html>

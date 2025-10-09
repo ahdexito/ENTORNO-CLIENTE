@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 5. Diseña una función que sea capaz de encontrar los caracteres comunes entre dos palabras. La función recibe como argumentos dos palabras o frases y devuelve una cadena con los caracteres que haya en común entre ambas. (1,5 puntos)
+    − Se desechan los espacios en blanco.
+    − No se tiene en cuenta el caso (mayúsculas o minúsculas).
+    Por ejemplo, si llamamos a la función actividad6("Ciudad","Cuando") el resultado será "cuda". -->
+</head>
+<body>
+    <script>
+        var cadena1 = "Ciudad", cadena2 = "Cuando";
+
+        var caracteres_comun = function(cadena1, cadena2) {
+
+            // variables
+            var resultado = "", letra1 = "", letra2 = "";
+
+            // recorrer cadena 1 para comparar con cadena 2
+            for (let i = 0; i < cadena1.length; i++) {
+
+                // guardar la letra
+                letra1 = cadena1.charAt(i).toLowerCase();
+
+                // recorrer cadena 2 para comparar con cadena 1
+                for (let j = 0; j < cadena2.length; j++) {
+
+                    // guardar la letra
+                    letra2 = cadena2.charAt(j).toLowerCase();
+                    
+                    // booleanos para hacer check
+                    var coinciden = false, agregada = false;
+
+                    // verificar si no es un espacio y coinciden
+                    if (letra2 !== " " && letra2 === letra1) {
+
+                        coinciden = true;
+
+                        // recorrer resultado para verificar que no se añadió antes
+                        for (let k = 0; k < resultado.length; k++) {
+
+                            if (letra2 === resultado.charAt(k)) {
+
+                                agregada = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    // si cumple ambas condiciones, se agrega
+                    if (coinciden && !agregada) resultado += letra2;
+                }
+            }
+            
+
+            return resultado;
+        }
+
+        console.log(caracteres_comun(cadena1, cadena2));
+    </script>
+</body>
+</html>

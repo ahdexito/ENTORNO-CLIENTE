@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 3. Escribe una función que reciba como argumento una frase y devuelva la misma frase, pero con la inicial de cada palabra en mayúsculas: (2 puntos)
+    Por ejemplo, actividad4("te estas pasando juanan") debería devolver la frase Te Estas Pasando Juanan -->
+</head>
+<body>
+    <script>
+        var letras_capitales = function(texto) {
+            resultado = "";
+            capitalizar = "";
+            inicio = 0;
+
+            for (let i = 0; i <= texto.length; i++) {
+                // buscar un espacio o el final de la cadena
+                if (texto.charAt(i) === (" ") || i === texto.length) {
+
+                    // recortar desde el último principio hasta el espacio o el final
+                    capitalizar = texto.substring(inicio, i);
+
+                    // capitalizar su primer carácter
+                    if (capitalizar.length > 0) {
+                        capitalizar = capitalizar.charAt(0).toUpperCase() + capitalizar.slice(1);
+                    }
+
+                    // sumar fragmento al resultado
+                    resultado += capitalizar;
+
+                    // añadir espacio si no es el final
+                    if (i < texto.length) resultado += " ";
+
+                    // establecer nuevo principio
+                    inicio = i + 1;
+                }
+            }
+            return resultado;
+        }
+
+        console.log(letras_capitales("te estás pasando juanan"));
+    </script>
+</body>
+</html>

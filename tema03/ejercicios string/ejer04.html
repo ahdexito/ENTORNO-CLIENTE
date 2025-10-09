@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 4. Crea una función que descodifique un código de producto. El código contiene tres partes separadas por un guion: (2puntos)
+    − Dos caracteres: CP: cliente particular, CE: empresa
+    − Dos dígitos: 10Local, 11Autonómico, 12Nacional, 20Internacional
+    − Una cifra que indica el número de años de antigüedad del cliente.
+    − Si el código es erróneo la función deberá informar del tipo de error o errores.
+    Por ejemplo, actividad5("CP-12-3") debería devolver Cliente particular nacional con 3 años de antigüedad -->
+</head>
+<body>
+    <script>
+        var codigo = "CP-12-3";
+
+        var descodificar = function(codigo) {
+
+            // guardar booleano si algún fragmento está mal
+            var error = false;
+            
+            // separar el código por partes
+            var parte1 = "", parte2 = "", parte3 = "";
+            var contador = 0;
+
+            for (let i = 0; i < codigo.length; i++) {
+                // recorrer cada letra del string
+                var letra = codigo.charAt(i);
+
+                // contar cada guión
+                if (letra === "-") contador++;
+                
+                // guardar cada parte separada por cada guión
+                else if (contador === 0) parte1 += letra;
+                else if (contador === 1) parte2 += letra;
+                else parte3 += letra;
+            }
+
+            // verificar si se ha dividido en tres partes
+            if (contador !== 2) {
+                console.log("No has dividido el código en tres partes. Usa guiones.");
+                error = true;
+            }
+
+            // verificar la primera parte
+            switch (parte1) {
+                case "CP" : 
+                    parte1 = "Cliente particular,";
+                    break;
+                case "CE":
+                    parte1 = "Empresa,";
+                    break;
+                default:
+                    parte1 = null;
+                    console.log("La primera parte del código es incorrecta.");
+                    error = true;
+                    break;
+            }
+
+            // verificar la segunda parte
+            switch (parte2) {
+                case "10":
+                    parte2 = "local,";
+                    break;
+                case "11":
+                    parte2 = "autonómico,";
+                    break;
+                case "12":
+                    parte2 = "nacional,";
+                    break;
+                case "20":
+                    parte2 = "internacional,";
+                    break;
+                default:
+                    parte2 = null;
+                    console.log("La segunda parte del código es incorrecta.");
+                    error = true;
+                    break;
+            }
+            
+            // verificar la tercera parte
+            if (isNaN(parte3)) {
+                parte3 = null;
+                console.log("La tercera parte del código es incorrecta.");
+                error = true;
+            }
+
+            // imprimir resultado si no ha habido algún error
+            if (!error) console.log(parte1 + " " + parte2 + " con " + parte3 + " años de antigüedad.");
+        }
+
+        descodificar(codigo);
+    </script>
+</body>
+</html>
