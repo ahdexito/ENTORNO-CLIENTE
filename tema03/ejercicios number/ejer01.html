@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer01</title>
+
+    <!-- 1. Realiza una función que calcule la nota media y que la devuelva con 2 decimales. (1,25puntos) -->
+</head>
+<body>
+    <script>
+        var nota_media = function(nota1, nota2, nota3, nota4, nota5) {
+
+            // realizar el cálculo
+            let resultado = (nota1 + nota2 + nota3 + nota4 + nota5) / 5;
+
+            // devuelve el resultado con dos decimales
+            return resultado.toFixed(2);
+        }
+
+        console.log(nota_media(3, 5, 8, 2, 9));
+    </script>
+</body>
+</html>

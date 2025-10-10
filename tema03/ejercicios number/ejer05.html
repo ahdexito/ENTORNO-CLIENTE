@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer05</title>
+
+    <!-- 5. Crea una función que reciba como argumento una frase con letras y números. La función debe devolver la suma de todos los dígitos contenidos en la frase. (3 puntos)
+    Al ejecutar actividad5("Estamos a 2 días del finde y faltan 90 días para fin del año 2025), deberá devolver el número 20 (2+9+0+2+0+2+5) -->
+</head>
+<body>
+    <script>
+        var texto = "Estamos a 2 días del finde y faltan 90 días para fin del año 2025";
+
+        var suma_digitos = function(entrada) {
+
+            let resultado = 0;
+
+            // recorrer caracter uno a uno
+            for (let i = 0; i < entrada.length; i++) {
+                // guardar la letra en variable
+                let caracter = entrada.charAt(i);
+                // convertir letra a número
+                let numero = Number(caracter);
+                // comprobar si el caracter es número y sumarlo si lo es
+                if (!isNaN(numero)) resultado += numero;
+            }
+
+            return resultado;
+        }
+
+        alert(suma_digitos(texto));
+        
+    </script>
+</body>
+</html>

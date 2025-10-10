@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer06</title>
+
+    <!-- 6. Realiza una función para obtener un número entero aleatorio entre dos valores (incluyendo ambos). (1,5 puntos) -->
+</head>
+<body>
+    <script>
+        var numero_aleatorio = function(minimo, maximo) {
+            return Math.floor(Math.random() * (maximo - minimo + 1)) + minimo;
+        }
+
+        console.log(numero_aleatorio(1, 10));
+    </script>
+</body>
+</html>

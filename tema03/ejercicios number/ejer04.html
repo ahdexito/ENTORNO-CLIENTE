@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer04</title>
+
+    <!-- 4. Realiza una función que pregunte y se ejecute hasta que el usuario introduzca un número. (1,25 puntos) -->
+</head>
+<body>
+    <script>
+        var solicitar_numero = function() {
+            let entrada = "";
+            let es_numero = false;
+
+            do {
+                // solicitar entrada
+                entrada = prompt("Introduce un número");
+
+                // convertir entrada a número
+                let numero = Number(entrada);
+
+                // verificar si es un número
+                if (!isNaN(numero) && entrada.trim() !== "") {
+                    // cambiar a true para salir del bucle
+                    es_numero = true;
+                    alert("Tu número es '" + entrada + "'");
+                }
+                else alert("'" + entrada + "' no es un número.");
+
+            // repetir bucle hasta que la entrada sea un número
+            } while (!es_numero);
+        }
+
+        solicitar_numero();
+    </script>
+</body>
+</html>
