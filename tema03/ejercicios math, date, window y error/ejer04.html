@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer04</title>
+
+    <!-- 4. Realiza un programa donde el ordenador te salude con un buenos días, buenas tardes o buenas noches según la hora del día. De 6 de la mañana a 12 del mediodía serán buenos días, a partir de las 12 hasta las 20h serán buenas tardes y a partir de las 20h hasta las 6 de la madrugada serán buenas noches. (1 punto) -->
+</head>
+<body>
+    <h1> EJERCICIO 4 </h1>
+    <script>
+        var saludar = function() {
+            // variable tipo fecha (hoy)
+            let hoy = new Date();
+
+            // prueba de horario matutino
+            // hoy = new Date(2000, 0, 12, 8);
+
+            // prueba de horario vespertino
+            // hoy = new Date(200, 0, 12, 17);
+
+            // prueba de horario nocturno
+            // hoy = new Date(2000, 0, 12, 22);
+
+            // almacenar hora en una variable
+            let hora = hoy.getHours();
+
+            // condición de 6h a 12h - buenos días
+            if (hora >= 6 && hora < 12) document.write("Buenos días.");
+
+            // condición de 12h a 20h - buenas tardes
+            else if (hora >= 12 && hora < 20) document.write("Buenas tardes.");
+
+            // condición de 20h a 6h - buenas noches
+            else document.write("Buenas noches.");
+            
+        }
+
+        // llamada a la función
+        saludar();
+    </script>
+</body>
+</html>

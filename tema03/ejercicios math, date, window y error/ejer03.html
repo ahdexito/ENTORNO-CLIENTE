@@ -10,9 +10,25 @@
 <body>
     <h1> EJERCICIO 3 </h1>
     <script>
+        // función que compara el año de la fecha recibida con la de hoy
         var calcularDifAnyos = function(fecha) {
-            
+        
+            // variable tipo fecha (hoy)
+            const hoy = new Date();
+
+            // guardar el año de cada fecha en variables
+            let anyoHoy = hoy.getFullYear();
+            let anyoFecha = fecha.getFullYear();
+
+            // devolver la diferencia entre ambas variables
+            return anyoHoy - anyoFecha;
         }
+
+        // variable tipo fecha de prueba
+        const fecha = new Date(2012, 6, 12);
+
+        // imprimir resultado llamando a la función
+        document.write("Entre hoy y " + fecha.getFullYear() + " hay una diferencia de " + calcularDifAnyos(fecha) + " años.");
     </script>
 </body>
 </html>

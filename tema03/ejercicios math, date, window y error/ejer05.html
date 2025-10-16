@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer05</title>
+    
+    <!-- 5. Realiza un programa que sea capaz de calcular el número de días transcurridos entre dos fechas dadas en la forma "año/mes/dia". El resultado debe ser un valor absoluto, o sea, el primer argumento será una fecha anterior o posterior al segundo, pero el resultado será un número de días, sin signo. (2 puntos)
+    Por ejemplo, actividad5("2023/03/10", "2023/03/15") deberá devolver que entre esas fechas hay 5 días. -->
+</head>
+<body>
+    <h1> EJERCICIO 5 </h1>
+    <script>
+        // calcular la diferencia de días absoluta restando la diferencia del valor de cada fecha en milisegundos
+        var difDias = function(fecha1, fecha2) {
+            
+            // convertir cadenas a objetos Date
+            const f1 = new Date(fecha1);
+            const f2 = new Date(fecha2);
+
+            // convertir las fechas a milisegundos
+            const f1Msec = Date.parse(f1);
+            const f2Msec = Date.parse(f2);
+
+            // restar milisegundos en valor absoluto
+            const difMiliseg = Math.abs(f1Msec - f2Msec);
+
+            // convertir milisegundos a días
+            const dias = difMiliseg / (1000 * 60 * 60 * 24);
+
+            // devolver días redondeado
+            return Math.round(dias);
+        }
+
+        // declarar string de fechas
+        const fecha1 = "2025/09/16";
+        const fecha2 = "2000/01/12";
+
+        // imprimir resultado llamando a la función
+        document.write("La diferencia de días es: " + difDias(fecha1, fecha2));
+    </script>
+</body>
+</html>
