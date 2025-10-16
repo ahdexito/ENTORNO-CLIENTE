@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer01</title>
+
+    <!-- 1. Realiza una función que dada cualquier fecha, la devuelva formateada como dd-mm-yyyy. (0,25 puntos) -->
+</head>
+<body>
+    <h1> EJERCICIO 1 </h1>
+    <script>
+        // crear variable tipo fecha (hoy)
+        const hoy = new Date();
+
+        // separar la fecha en partes
+        const dia = hoy.getDate();
+        const mes = hoy.getMonth() + 1;
+        const anyo = hoy.getFullYear();
+
+        // imprimir la fecha con formato personalizado
+        document.write("La fecha de hoy es: " + dia + "-" + mes + "-" + anyo);
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer02</title>
+
+    <!-- 2. Realiza un programa que dada una fecha indique en qué día de la semana nos encontramos (lunes, martes...). (0,25 puntos) -->
+</head>
+<body>
+    <h1> EJERCICIO 2 </h1>
+    <script>
+        // función que recibe el número del día de la semana, y devuelve string con el nombre del día
+        var nombreDiaSemana = function(fecha) {
+
+            // guardar el valor del número del día de la semana
+            const numDiaSemana = fecha.getDay();
+
+            // variable string para devolver el nombre del día
+            let diaSemana = "";
+
+            switch (numDiaSemana) {
+                case 1: 
+                    diaSemana = "lunes";
+                    break;
+                case 2:
+                    diaSemana = "martes";
+                    break;
+                case 3:
+                    diaSemana = "miércoles";
+                    break;
+                case 4:
+                    diaSemana = "jueves";
+                    break;
+                case 5:
+                    diaSemana = "viernes";
+                    break;
+                case 6:
+                    diaSemana = "sábado";
+                    break;
+                case 0:
+                    diaSemana = "domingo";
+                    break;
+            }
+
+            return diaSemana + "<br>";
+        }
+        
+        // variable tipo fecha (hoy)
+        const hoy = new Date();
+
+        // variable tipo fecha (Navidad)
+        const navidad = new Date(2025, 11, 25);
+        
+        // imprimir resultado
+        document.write("El día de la semana de hoy es: " + nombreDiaSemana(hoy));
+
+        document.write("El día de la semana de Navidad es: " + nombreDiaSemana(navidad));
+    </script>
+</body>
+</html>
