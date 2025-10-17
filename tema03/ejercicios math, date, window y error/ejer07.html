@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer07</title>
+
+    <!-- 7. Realiza un programa que pasados 20 segundos, nos muestre una sola vez la fecha actual del sistema. (0,5 puntos) -->
+</head>
+<body>
+    <h1> EJERCICIO 7 </h1>
+    <script>
+        var mostrarFecha = function() {
+            // objeto Date (hoy)
+            const hoy = new Date();
+
+            // imprimir fecha
+            alert("La fecha actual es: " + hoy);
+        }
+
+        // temporizar 20 segundos la función
+        setTimeout(mostrarFecha, 20000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer 06</title>
+
+    <!-- 6. Realiza una función que determine cuál de las dos horas que se le pasa como argumento es menor. Se supone que ambos tiempos son horas de un mismo día y la solución se debe hacer usando el objeto Date.(1,5 puntos)
+    Por ejemplo, actividad6("12:20:00", "11:10:00") diría que la segunda hora es menor que la primera. -->
+</head>
+<body>
+    <h1> EJERCICIO 6 </h1>
+        <script>
+            var comparaHora = function(hora1, hora2) {
+                
+                // convertir cadenas a objetos Date, concatenando una fecha predefinida
+                const h1 = new Date("2000-01-01T" + hora1);
+                const h2 = new Date("2000-01-01T" + hora2);
+
+                // comparar ambas horas, ya que es el mismo día
+                if (hora1 < hora2) document.write("La primera hora es menor que la segunda.");
+                else if (hora1 > hora2) document.write("La segunda hora es menor que la primera.");
+
+                else document.write("Ambas horas son iguales.")
+            }
+
+            // llamada a la función
+            comparaHora("12:20:00", "11:10:00");
+        </script>
+</body>
+</html>
