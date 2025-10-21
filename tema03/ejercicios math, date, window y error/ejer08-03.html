@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer08-03</title>
+
+    <!-- 8. Siguiendo el ejemplo de los apuntes de referencia sobre Manejo de
+    errores, mejora 4 actividades realizadas con el tratamiento de errores.
+    Indica de qué actividad se trata y deja el código de referencia con el que
+    realizaste la actividad en su día para poder realizar la comparativa de la
+    mejora realizada. (4 puntos) -->
+</head>
+<body>
+    <h1> EJERCICIO 8 - 3 </h1>
+    <script>
+        /*
+        EJERCICIO 03 - NUMBER
+
+        var numero = 3;
+        var decimal = 3.3;
+        var texto = "3";
+
+        var calcular_cubo = function(entrada) {
+            
+            // comprobar si es un número
+            if (typeof entrada !== "number" || isNaN(entrada)) {
+                // si no lo es, la función no continúa y devuelve false
+                alert("'" + entrada + "' no es un número.");
+                return false;
+            }
+            // comprobar si es un entero
+            if (!Number.isInteger(entrada)) {
+                // si no lo es, la función no continúa y devuelve false
+                alert("'" + entrada + "' no es un número entero.");
+                return false;
+            }
+            
+            let resultado = entrada * entrada * entrada;
+            alert("El cubo de " + entrada + " es: " + resultado);
+        }
+
+        calcular_cubo(numero);
+        calcular_cubo(decimal);
+        calcular_cubo(texto);
+        */
+
+        var numero = 3;
+        var decimal = 3.3;
+        var texto = "3";
+
+        var calcular_cubo = function(entrada) {
+            try {
+                // comprobar si es un número
+                if (typeof entrada !== "number" || isNaN(entrada)) {
+                    alert("'" + entrada + "' no es un número.");
+                    return false;
+                }
+
+                // comprobar si es un entero
+                if (!Number.isInteger(entrada)) {
+                    alert("'" + entrada + "' no es un número entero.");
+                    return false;
+                }
+
+                let resultado = entrada * entrada * entrada;
+                alert("El cubo de " + entrada + " es: " + resultado);
+            } 
+            
+            catch (error) {
+                console.error("Error:", error);
+                alert("Error al calcular el cubo.");
+            }
+        }
+
+        calcular_cubo(numero);
+        calcular_cubo(decimal);
+        calcular_cubo(texto);
+
+    </script>
+</body>
+</html>

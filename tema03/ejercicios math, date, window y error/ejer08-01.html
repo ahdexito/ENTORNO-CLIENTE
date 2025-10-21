@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ejer08</title>
+    <title>ejer08-01</title>
 
     <!-- 8. Siguiendo el ejemplo de los apuntes de referencia sobre Manejo de
     errores, mejora 4 actividades realizadas con el tratamiento de errores.
@@ -12,9 +12,11 @@
     mejora realizada. (4 puntos) -->
 </head>
 <body>
-    <h1> EJERCICIO 8 </h1>
+    <h1> EJERCICIO 8 - 1 </h1>
     <script>
         /*
+        EJERCICIO 01 - NUMBER
+
         var nota_media = function(nota1, nota2, nota3, nota4, nota5) {
 
             // realizar el cálculo
@@ -28,17 +30,18 @@
         */
         
         var nota_media = function(nota1, nota2, nota3, nota4, nota5) {
-
-            // realizar el cálculo
-            let resultado = (nota1 + nota2 + nota3 + nota4 + nota5) / 5;
-
-            // devuelve el resultado con dos decimales
-            return resultado.toFixed(2);
+            try {
+                let resultado = (nota1 + nota2 + nota3 + nota4 + nota5) / 5;
+                return resultado.toFixed(2);
+            } 
+            
+            catch (error) {
+                console.error("Error:", error);
+                return "Error en los datos.";
+            }
         }
 
-        let nota1 = "a", nota2 = 6, nota3 = 3, nota4 = 7, nota5 = 9;
-
-        console.log(nota_media(nota1, nota2, nota3, nota4, nota5));
+        console.log(nota_media(3, 5, 8, 2, 9));
     </script>
 </body>
 </html>

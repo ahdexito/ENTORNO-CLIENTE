@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer08-04</title>
+
+    <!-- 8. Siguiendo el ejemplo de los apuntes de referencia sobre Manejo de
+    errores, mejora 4 actividades realizadas con el tratamiento de errores.
+    Indica de qué actividad se trata y deja el código de referencia con el que
+    realizaste la actividad en su día para poder realizar la comparativa de la
+    mejora realizada. (4 puntos) -->
+</head>
+<body>
+    <h1> EJERCICIO 8 - 4 </h1>
+    <script>
+        /*
+        EJERCICIO 05 - NUMBER
+
+        var texto = "Estamos a 2 días del finde y faltan 90 días para fin del año 2025";
+
+        var suma_digitos = function(entrada) {
+
+            let resultado = 0;
+
+            // recorrer caracter uno a uno
+            for (let i = 0; i < entrada.length; i++) {
+                // guardar la letra en variable
+                let caracter = entrada.charAt(i);
+                // convertir letra a número
+                let numero = Number(caracter);
+                // comprobar si el caracter es número y sumarlo si lo es
+                if (!isNaN(numero)) resultado += numero;
+            }
+
+            return resultado;
+        }
+
+        alert(suma_digitos(texto));
+        */
+
+        var texto = "Estamos a 2 días del finde y faltan 90 días para fin del año 2025";
+
+        var suma_digitos = function(entrada) {
+            try {
+                let resultado = 0;
+
+                // recorrer caracter uno a uno
+                for (let i = 0; i < entrada.length; i++) {
+                    let caracter = entrada.charAt(i);
+                    let numero = Number(caracter);
+
+                    // comprobar si el caracter es número y sumarlo
+                    if (!isNaN(numero) && caracter !== " ") resultado += numero;
+                }
+
+                return resultado;
+            } 
+            
+            catch (error) {
+                console.error("Error:", error);
+                alert("Error al sumar los dígitos.");
+                return 0;
+            }
+        }
+
+        alert(suma_digitos(texto));
+
+    </script>
+</body>
+</html>

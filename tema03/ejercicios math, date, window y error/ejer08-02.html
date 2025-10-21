@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer08-02</title>
+    
+    <!-- 8. Siguiendo el ejemplo de los apuntes de referencia sobre Manejo de
+    errores, mejora 4 actividades realizadas con el tratamiento de errores.
+    Indica de qué actividad se trata y deja el código de referencia con el que
+    realizaste la actividad en su día para poder realizar la comparativa de la
+    mejora realizada. (4 puntos) -->
+</head>
+<body>
+    <h1> EJERCICIO 8 - 2 </h1>
+    <script>
+        /*
+        EJERCICIO 04 - NUMBER
+
+        var solicitar_numero = function() {
+            let entrada = "";
+            let es_numero = false;
+
+            do {
+                // solicitar entrada
+                entrada = prompt("Introduce un número");
+
+                // convertir entrada a número
+                let numero = Number(entrada);
+
+                // verificar si es un número
+                if (!isNaN(numero) && entrada.trim() !== "") {
+                    // cambiar a true para salir del bucle
+                    es_numero = true;
+                    alert("Tu número es '" + entrada + "'");
+                }
+                else alert("'" + entrada + "' no es un número.");
+
+            // repetir bucle hasta que la entrada sea un número
+            } while (!es_numero);
+        }
+
+        solicitar_numero();
+        */
+
+        var solicitar_numero = function() {
+            try {
+                let entrada = "";
+                let es_numero = false;
+
+                do {
+                    // solicitar entrada
+                    entrada = prompt("Introduce un número");
+
+                    // convertir entrada a número
+                    let numero = Number(entrada);
+
+                    // verificar si es un número
+                    if (!isNaN(numero) && entrada.trim() !== "") {
+                        // cambiar a true para salir del bucle
+                        es_numero = true;
+                        alert("Tu número es '" + entrada + "'");
+                    } 
+                    else alert("'" + entrada + "' no es un número.");
+                    
+
+                // repetir bucle hasta que la entrada sea un número
+                } while (!es_numero);
+            } 
+            
+            catch (error) {
+                console.error("Error:", error);
+                alert("Error al introducir el número.");
+            }
+        }
+
+        solicitar_numero();
+    </script>
+</body>
+</html>
