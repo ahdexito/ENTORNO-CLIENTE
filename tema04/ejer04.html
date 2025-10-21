@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer04</title>
+
+    <!-- 4. Crea un script que contenga un array con los valores siguientes: (0,5
+    puntos)
+    Dragonborn, Skyrim, Dovahkiin, Dragon, Fire, Game
+    - Muestra por pantalla: El número de elementos que tiene el array y el
+    contenido del array.
+    - Utiliza el método pop() para eliminar el último elemento del array.
+    - Muestra por pantalla: El número de elementos que tiene el array y el
+    contenido del array.
+    - Muestra por pantalla: El elemento eliminado del array -->
+</head>
+<body>
+    <script>
+        // definir array
+        let palabras = ["Dragonborn", "Skyrim", "Dovahkiin", "Dragon", "Fire", "Game"];
+
+        // mostrar cantidad y elementos
+        alert("El array tiene los siguientes " + palabras.length + " elementos: " + palabras.join(", "));
+
+        // eliminar último elemento
+        let eliminado = palabras.pop();
+
+        // mostrar cantidad y elementos
+        alert("El array tiene los siguientes " + palabras.length + " elementos: " + palabras.join(", "));
+
+        // mostrar elemento eliminado
+        alert("El elemento eliminado es: " + eliminado);
+    </script>
+</body>
+</html>

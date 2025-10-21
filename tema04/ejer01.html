@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer01</title>
+
+    <!-- 1. En un script vamos definir la siguiente lista de nombres: (0,5 puntos)
+    'Juan', 'Pedro', 'Luis', 'María', 'Julia'
+    - Primero definiremos una función llamada mostrar(), que mostrará
+    por consola los elementos que contiene nuestra lista.
+    - Después se le solicitará al usuario que introduzca un nombre por
+    teclado.
+    - A continuación se definirá la función buscarItem(), a la que se le
+    pasará la lista y el nombre introducido por el usuario. Esta función
+    determinará si el nombre en concreto está en la lista, y si es así en
+    qué posición se encuentra. Si el nombre no está en la lista la
+    función debe devolver un valornegativo.
+    - Por último, se informará porpantalla. -->
+</head>
+<body>
+    <script>
+        // array de nombres
+        let nombres = ["Juan", "Pedro", "Luis", "María", "Julia"];
+
+        // función que imprime el array
+        function mostrar(nombres) {
+            alert("Nombres: " + nombres.join(", "));
+        }
+
+        // ejecutar función
+        mostrar(nombres);
+
+        // solicitar nuevo nombre
+        let nombre = prompt("Introduce nombre");
+
+        // función que busca un nombre en un array
+        function buscarItem(nombres, nombre) {
+            // buscar y guardar el índice del nombre
+            let posicion = nombres.indexOf(nombre);
+            
+            // imprimir mensaje si lo encuentra o no
+            if (posicion >= 0) alert("El nombre " + nombre + " está en la posición " + posicion);
+            else alert("El nombre " + nombre + " no se ha encontrado");
+
+            return posicion;
+        }
+
+        // ejecutar función
+        buscarItem(nombres, nombre);
+    </script>
+</body>
+</html>
