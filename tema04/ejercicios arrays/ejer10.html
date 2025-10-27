@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer10</title>
+
+    <!-- 10. Define un script en el que se crea un array para almacenar los cinco
+    sueldos de operarios y luego mostrar el total de gastos en sueldos (cada
+    actividad en una función). A la hora de implementar el script debes seguir
+    los siguientes requisitos (2 puntos):
+    - Definiremos un objeto de la clase Array, indicándole que queremos
+    almacenar 5 valores. Lo llamaremos sueldos.
+    - Definiremos una funcion “cargar()” que se encargue de cargar el
+    array sueldos que hemos creado con los sueldos de los operarios.
+        − Para ello, llamaremos a la función cargar() enviándole el
+    array sueldos.
+        − En la función, a través de un bucle for recorremos las
+    distintas componentes del array y almacenamos valores
+    enteros que ingresamos por teclado.
+        − Para conocer el tamaño del array accedemos a la propiedad
+    length de la claseArray.
+    - Definiremos también la función “calcularGastos(sueldos)”, en la que
+    sumamos todas las componentes del array sueldos, imprimimos
+    en la página los valores y el total de gastos. -->
+</head>
+<body>
+    <script>
+        let sueldos = new Array(5);
+
+        let cargar = function(sueldos) {
+            for (let i = 0; i < sueldos.length; i++) {
+                sueldos[i] = prompt("Introduce sueldo " + (i + 1));
+            }
+        }
+
+        cargar(sueldos);
+
+        let calcularGastos = function(sueldos) {
+            let resultado = 0;
+            for (let i in sueldos) {
+                
+            }
+        }
+    </script>
+</body>
+</html>

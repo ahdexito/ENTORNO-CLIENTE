@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer06</title>
+
+    <!-- 6. Crea un script que contenga un array con los valores siguientes: (0,5
+    puntos)
+    Dragonborn, Skyrim, Dovahkiin, Dragon, Fire, Game
+    Muestra por pantalla:
+    - El número de elementos que tiene el array.
+    - Cada uno de los elementos del array junto a su índice, debe quedar
+    algo parecido a lo siguiente:
+    0: Dragonborn
+    1: Skyrim
+    2: Dovahkiin
+    3: Dragon
+    4: Fire
+    5: Game
+    o Vamos a crear un nuevo array a partir del anterior, para ello:
+    − Solicita al usuario que elija el índice del elemento del array
+    anterior que será el primer elemento en el nuevo array.
+    − Solicita al usuario que elija el índice del elemento del array
+    anterior que será el último elemento en el nuevo array. -->
+</head>
+<body>
+    <script>
+        // definir array
+        let palabras = ["Dragonborn", "Skyrim", "Dovahkiin", "Dragon", "Fire", "Game"];
+        
+        // mostrar cantidad
+        alert("El array tiene " + palabras.length + " elementos");
+
+        let resultado = "";
+
+        // concatenar cada elemento en la misma variable
+        for (let i in palabras) {
+            resultado += i + ": " + palabras[i] + "; ";
+        }
+
+        let primero = Number(prompt(resultado + "\n\nIntroduce el índice del primer elemento del nuevo array"));
+
+        let ultimo = Number(prompt(resultado + "\n\nIntroduce el índice del último elemento del nuevo array"));
+
+        // crear el nuevo array
+        let palabras2 = palabras.slice(primero, ultimo + 1);
+
+        let resultado2 = "";
+
+        // concatenar cada elemento en la misma variable
+        for (let i in palabras2) {
+            resultado2 += i + ": " + palabras2[i] + "; ";
+        }
+
+        alert("Nuevo array: " + resultado2);
+    </script>
+</body>
+</html>

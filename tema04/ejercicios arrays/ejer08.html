@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer08</title>
+
+    <!-- 8. Realiza un programa que reciba una cadena con el siguiente formato: (0,5
+    punto)
+    “nombre:apellidos:telefono:email:codigopostal”
+    o Tras recibir la cadena, debe desglosar y mostrar la siguiente
+    información:
+    − Código postal.
+    − Apellidos.
+    − Email.
+    − Suponiendo un formato de email“direccion@servidor” debe
+    mostrar el nombre del servidorasociado. -->
+</head>
+<body>
+    <script>
+        // solicitar entrada
+        //let entrada = prompt("Introduce cadena separada por ':'");
+        let entrada = ("Ángel:García Smakula:666555444:angel@outlook.com:03182");
+
+        // separar entrada en un array
+        let parametros = entrada.split(":");
+
+        // extraer el servidor del string email
+        let paramEmail = parametros[3];
+        let principio = paramEmail.indexOf("@");
+        let final = paramEmail.indexOf(".");
+        let servidor = paramEmail.slice(principio + 1, final);
+
+        // mostrar información
+        alert(
+            "Código postal: " + parametros[4] + "\n" +
+            "Apellidos: " + parametros[1] + "\n" + 
+            "Email: " + parametros[3] + "\n" + 
+            "Servidor de email: " + servidor);
+    </script>
+</body>
+</html>

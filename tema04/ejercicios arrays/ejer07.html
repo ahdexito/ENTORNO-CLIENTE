@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer07</title>
+
+    <!-- 7. Crea un script que contenga un array con los valores siguientes: (0,5
+    puntos)
+    Dragonborn, Skyrim, Dovahkiin, Dragon, Fire, Game
+    - Muestra por pantalla: El número de elementos que tiene el array y el
+    contenido del array.
+    - Solicita al usuario que introduzca un carácter que actúe como
+    separador.
+    - Muestra por pantalla una cadena de caracteres compuesta por los
+    elementos del array, pero separados por el carácter que ha
+    introducido el usuario.
+    - Para comprobar los cambios en el array, muestra por pantalla el
+    número de elementos que contiene, y el contenido del array. -->
+</head>
+<body>
+    <script>
+        // definir array
+        let palabras = ["Dragonborn", "Skyrim", "Dovahkiin", "Dragon", "Fire", "Game"];
+
+        // mostrar cantidad y elementos
+        alert("El array tiene " + palabras.length + " elementos");
+
+        let separador = prompt("Introduce el carácter con el que separar");
+
+        alert("Nuevo array: " + palabras.join(separador));
+
+        // mostrar cantidad y elementos
+        alert("El array tiene los siguientes " + palabras.length + " elementos: " + palabras.join(", "));
+
+    </script>
+</body>
+</html>

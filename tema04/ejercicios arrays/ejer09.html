@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer09</title>
+
+    <!-- 9. Crea una función llamada “pideYComprueba” que mediante un bucle y
+    utilizando prompt, solicite al usuario que introduzca tantos números
+    enteros como quiera. (2 puntos)
+    - El usuario podrá estar introduciendo números hasta que inserte el
+    carácter “x”.
+    - Cada vez que el usuario introduzca un número deberás comprobar
+    que es un número entero válido (parsearlo) y guardarlo en un array.
+    - La función debe devolver un array con los números introducidos
+    por el usuario ya parseados.
+    - Crea una función llamada “mitad” a la que se le pase un array como
+    parámetro y que divida todos los valores de ese array entre 2. NO
+    tiene que crear un array nuevo. Debe ser el array original el que
+    debe modificar.
+    - Modifica la función anterior, reutilizando las funciones que ya
+    tengas y crea una función llamada “porlaMitad” a la que se le pase
+    un array como parámetro y que divida todos los valores de ese
+    array entre 2. La función debe devolver array nuevo. NO debe
+    modificar el array original. -->
+</head>
+<body>
+    <script>
+        let pideYComprueba = function() {
+
+            // variables y array
+            let x = "x", entrada = 0;
+            let numeros = [];
+
+            // bucle do while que finaliza cuando se introduce x
+            do {
+                entrada = prompt("Introduce número. Para finalizar introduce \"x\"");
+
+                // comprobar que no es x
+                if (entrada !== x) {
+                    let numero = Number(entrada.trim());
+
+                    // comprobar que sea un número
+                    if (!isNaN(entrada) && entrada.trim() !== "" && Number.isInteger(numero))
+                        // parsear la entrada a número
+                        numeros.push(Number(numero));
+
+                    else {
+                        alert("Entrada no válida");
+                    }
+                }
+            } while (entrada !== x);
+
+            return numeros;
+        }
+
+        // llamada a la función y guardar en array
+        let numeros = pideYComprueba();
+
+        // función que divide directamente cada valor del array
+        let mitad = function(array) {
+            for (let i in array) {
+                array[i] /= 2;
+            }
+        }
+
+        // llamada a la función
+        mitad(numeros);
+
+        // imprimir el mismo array con su valores divididos entre 2
+        alert(numeros);
+
+        // función que divide directamente cada valor del array
+        let porlaMitad = function(array) {
+            let resultado = [];
+
+            for (let i in array) {
+                let numero = array[i];
+                resultado.push(numero / 2);
+            }
+
+            return resultado;
+        }
+
+        // imprimir nuevo array
+        alert(porlaMitad(numeros));
+    </script>
+</body>
+</html>
