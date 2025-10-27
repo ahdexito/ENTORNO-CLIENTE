@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer11</title>
+
+    <!-- 11. Realizar la función de comparación que ordene el array de personas.js por
+    los siguientes criterios: (2 puntos)
+    1. En primer lugar se ordenará por el cargo (primero Profesor,
+    después Administrativo y por últimoEstudiante).
+    2. Después por edad, descendente.
+    3. Y en último lugar, por nombre,ascendente.
+    De forma que el array anterior debería quedar ordenado de la siguiente
+    forma:
+    [ ["Luisa",60,"Profesor"], ["Agustín",50,"Profesor"], ["Adrián",47,"Profesor"],
+    ["Jose",47,"Profesor"], ["Toñi",48,"Administrativo"],
+    ["Juan",36,"Administrativo"], ["Rosa",75,"Estudiante"],
+    ["Fermín",64,"Estudiante"], ["Blas",36,"Estudiante"], ["Zoraida",36,"Estudiante"],
+    ["Pepe",31,"Estudiante"], ["Felipe",25,"Estudiante"], ["Ana",20,"Estudiante"],
+    ["Pedro",19,"Estudiante"], ["Juan",16,"Estudiante"], ["Miriam",15,"Estudiante"] ]
+    Muestra el resultado:
+    − por consola en formatoArray
+    − formando la siguiente cadena: Luisa de 60 años es Profesor -->
+</head>
+<body>
+    <script>
+        let personas = [
+            ["Adrián", 47, "Profesor"],
+            ["Luisa", 60, "Profesor"],
+            ["Ana", 20, "Estudiante"],
+            ["Blas", 36, "Estudiante"],
+            ["Agustín", 50, "Profesor"],
+            ["Felipe", 25, "Estudiante"],
+            ["Pedro", 19, "Estudiante"],
+            ["Zoraida", 36, "Estudiante"],
+            ["Juan", 36, "Administrativo"],
+            ["Toñi", 48, "Administrativo"],
+            ["Juan", 16, "Estudiante"],
+            ["Miriam", 15, "Estudiante"],
+            ["Rosa", 75, "Estudiante"],
+            ["Pepe", 31, "Estudiante"],
+            ["Fermín", 64, "Estudiante"],
+            ["Jose", 47, "Profesor"]
+        ];
+
+        // intercambia dos elementos del array
+        let intercambiar = function(array, i, j) {
+            let x = array[i];
+            array[i] = array[j];
+            array[j] = x;
+        }
+
+        // ordenar por nombre comparando el valor de cada string
+        let ordenarNombre = function(personas) {
+
+            for (let i = 0; i < personas.length - 1; i++) {
+                for (let j = 0; j < personas.length - i - 1; j++) {
+                    if (personas[j][0] > personas[j + 1][0]) {
+                        intercambiar(personas, j, j + 1);
+                    }
+                }
+            }
+        }
+
+        // ordenar por edad comparando cada entero
+        let ordenarEdad = function(personas) {
+
+            for (let i = 0; i < personas.length - 1; i++) {
+                for (let j = 0; j < personas.length - i - 1; j++) {
+                    if (personas[j][1] < personas[j + 1][1]) {
+                        intercambiar(personas, j, j + 1);
+                    }
+                }
+            }
+        }
+
+        let ordenarCargo = function(personas) {
+
+            // crear nuevo array para almacenar cada elemento ordenado
+            let arrayOrdenado = [];
+
+            // añadir primero profesores
+            for (let i in personas) {
+                if (personas[i][2] === "Profesor") arrayOrdenado.push(personas[i]);
+            }
+
+            // después administrativos
+            for (let i in personas) {
+                if (personas[i][2] === "Administrativo") arrayOrdenado.push(personas[i]);
+            }
+
+            // por último estudiantes
+            for (let i in personas) {
+                if (personas[i][2] === "Estudiante") arrayOrdenado.push(personas[i]);
+            }
+
+            personas.length = 0;
+
+            for (let i = 0; i < arrayOrdenado.length; i++) {
+                personas.push(arrayOrdenado[i]);
+            }
+        }
+
+        ordenarNombre(personas);
+
+        ordenarEdad(personas);
+
+        ordenarCargo(personas);
+
+        console.log(personas);
+
+    </script>
+</body>
+</html>

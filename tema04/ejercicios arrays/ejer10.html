@@ -28,20 +28,31 @@
     <script>
         let sueldos = new Array(5);
 
+        // función que cargar el array
         let cargar = function(sueldos) {
             for (let i = 0; i < sueldos.length; i++) {
                 sueldos[i] = prompt("Introduce sueldo " + (i + 1));
             }
         }
 
+        // llamada a la función
         cargar(sueldos);
 
+        // función que suma todos los sueldos
         let calcularGastos = function(sueldos) {
-            let resultado = 0;
+            let total = 0;
             for (let i in sueldos) {
-                
+                total += Number(sueldos[i]);
             }
+
+            // imprimir valores y el total
+            alert(
+                "Sueldos: " + sueldos.join(" | ") + "\n" +
+                "Total de gastos: " + total);
         }
+
+        // llamada a la función
+        calcularGastos(sueldos);
     </script>
 </body>
 </html>
