@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer03</title>
+
+    <!-- 3. Dado el siguiente array de nombres y edades, realiza un programa que
+    permita al usuario visualizar la primera persona que tenga la edad
+    introducida: (0,5puntos)
+    const personas = [
+    {name: "María", age: 20},
+    {name: "Bernardo", age: 28},
+    {name: "Pancracio", age: 22},
+    {name: "Andrea", age: 19},
+    {name: "Sara", age: 29},
+    {name: "Jorge", age: 32},
+    {name: "Yurena", age: 38},
+    {name: "Ayoze", age: 18}
+    ];
+    Muestra por consola la edad media de las personas. -->
+</head>
+<body>
+    <script>
+        const personas = [
+            {name: "María", age: 20},
+            {name: "Bernardo", age: 28},
+            {name: "Pancracio", age: 22},
+            {name: "Andrea", age: 19},
+            {name: "Sara", age: 29},
+            {name: "Jorge", age: 32},
+            {name: "Yurena", age: 38},
+            {name: "Ayoze", age: 18}
+        ];
+        
+        const entrada = 22;
+
+        // encontrar edad indicada
+        const primeraEdad = personas.find(persona => persona.age === entrada);
+        console.log(`Primera persona que tiene ${entrada} años: ${primeraEdad.name}`);
+        
+        // calcular media
+        const media = personas.reduce((acum, persona) => acum + persona.age, 0) / personas.length;
+        console.log(`Media: ${media.toFixed(2)}`);
+    </script>
+</body>
+</html>

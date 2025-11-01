@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer04</title>
+
+    <!-- 4. Dado el siguiente array: (1,5 punto)
+    const array = [ 95, 95, 14, 83, 58, 33, 65, 52, 7, 72, 13, 46,
+    19, 31, 27, 36, 30, 86, 88, 88, 68, 16, 5, 14, 41, 56, 89, 11,
+    6, 29, 72, 11, 69, 36, 16, 11, 82, 84, 32, 84, 95, 98, 76, 99,
+    100, 12, 89, 1, 92, 27, 66, 48, 38, 49, 30, 40, 87, 19, 31, 37,
+    5, 32, 9, 33, 98, 94, 5, 15, 4, 88, 47, 34, 83, 8, 31, 4, 2, 72,
+    31, 39, 15, 10, 46, 78, 11, 21, 92, 22, 83, 3, 6, 71, 39, 54,
+    50, 77, 13, 85, 7, 36 ];
+    - Haz una función que devuelva el array ordenado sin modificar el array
+    original.
+    - Haz una función que devuelva los números impares y ordenados.
+    - Haz una función que devuelva los números impares de dos cifras.
+    - Haz una función que devuelva un array de 0 a 100 con la frecuencia de
+    cada número en el array original. -->
+</head>
+<body>
+    <script>
+        const array = [ 95, 95, 14, 83, 58, 33, 65, 52, 7, 72, 13, 46,
+            19, 31, 27, 36, 30, 86, 88, 88, 68, 16, 5, 14, 41, 56, 89, 11,
+            6, 29, 72, 11, 69, 36, 16, 11, 82, 84, 32, 84, 95, 98, 76, 99,
+            100, 12, 89, 1, 92, 27, 66, 48, 38, 49, 30, 40, 87, 19, 31, 37,
+            5, 32, 9, 33, 98, 94, 5, 15, 4, 88, 47, 34, 83, 8, 31, 4, 2, 72,
+            31, 39, 15, 10, 46, 78, 11, 21, 92, 22, 83, 3, 6, 71, 39, 54,
+            50, 77, 13, 85, 7, 36 
+        ];
+
+        // abreviar 'console.log'
+        const c = console.log.bind(console);
+
+        // devolver array ordenado en una copia sin modificar el original
+        function ordenarArray(array) {
+            return [...array].sort((a, b) => a - b);
+        }
+        const arrayOrdenado = ordenarArray(array);
+        c(`Array ordenado: ${arrayOrdenado}`);
+        
+
+        // devolver array de impares ordenados
+        function ordenarImpares(array) {
+            return [...array].filter
+                (numero => numero % 2 != 0).
+                sort((a, b) => a - b);
+        }
+        const arrayImpares = ordenarImpares(array);
+        c(`Array con impares ordenados: ${arrayImpares}`);
+        
+
+        // devolver array con impares de dos cifras
+        function impares2Cifras(array) {
+            return [...array].filter
+                (numero => (numero % 2 != 0) && 
+                (numero > 9 && numero < 100));
+        }
+        const array2cifras = impares2Cifras(array);
+        c(`Array con impares de dos cifras: ${array2cifras}`);
+
+
+        // contar repetición de cada número
+        function contarRepetidos(array) {
+            let repetidos = Array(101).fill(0);
+            
+            array.forEach(numero => {
+                repetidos[numero]++;
+            });
+
+            return repetidos;
+        }
+        const repetidos = contarRepetidos(array);
+        c(`Array con cantidad de repetidos: ${repetidos}`);
+    </script>
+</body>
+</html>

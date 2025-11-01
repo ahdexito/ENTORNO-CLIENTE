@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer02</title>
+
+    <!-- 2. Dado el siguiente array de ciudades y población, realiza un programa que
+    permita al usuario visualizar las ciudades con mayor población que el
+    número introducido: (0,5 puntos)
+    const ciudades = [
+    {nombre: 'Alicante', poblacion: 3792621},
+    {nombre: 'Elche', poblacion: 8175133},
+    {nombre: 'Torrevieja', poblacion: 2695598},
+    {nombre: 'Orihuela', poblacion: 2099451},
+    {nombre: 'Callosa', poblacion: 1526006}
+    ]; -->
+</head>
+<body>
+    <script>
+        const ciudades = [
+            {nombre: 'Alicante', poblacion: 3792621},
+            {nombre: 'Elche', poblacion: 8175133},
+            {nombre: 'Torrevieja', poblacion: 2695598},
+            {nombre: 'Orihuela', poblacion: 2099451},
+            {nombre: 'Callosa', poblacion: 1526006}
+        ];
+
+        const numero = 2200000;
+
+        const ciudadesMayores = ciudades.filter(ciudad => ciudad.poblacion > numero);
+
+        console.log(`Ciudades con más de ${numero} habitantes:`);
+        ciudadesMayores.forEach(ciudad => console.log(ciudad.nombre));
+    </script>
+</body>
+</html>

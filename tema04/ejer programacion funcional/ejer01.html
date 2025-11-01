@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer01</title>
+
+    <!-- 1. Dado un array con los días de la semana obtén: (1,5 puntos)
+    - todos los días que empiezan por ‘M’.
+    - el primer día que empieza por ‘M’.
+    - la posición en el array del primer día que empieza por ‘M’.
+    - indica si algún día empieza por ‘S’.
+    - indica si todos los días acaban por ‘s’.
+    - devuelve otro array con los días en mayúsculas.
+    - indica si algún día es el ‘Martes’. -->
+</head>
+<body>
+    <script>
+        const dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+        
+        // días que empiezan por M
+        const diasM = dias.filter(dia => dia.startsWith("M"));
+        console.log(`Días que empiezan por 'M': ${diasM}`);
+
+        // primer día que empieza por M
+        const primerDiaM = dias.find(dia => dia.startsWith("M"));
+        console.log(`Primer día que empieza por 'M': ${primerDiaM}`);
+
+        // posición primer día que empieza por M
+        const posDiaM = dias.findIndex(dia => dia.startsWith("M"));
+        console.log(`Posición primer día con 'M': ${posDiaM}`);
+
+        // indicar si algún día empieza por S
+        const diaPorS = dias.some(dia => dia.startsWith("S"));
+        console.log(`Algún día empieza por S?: ${diaPorS}`);
+
+        // indicar si todos acaban por S
+        const terminanS = dias.every(dia => dia.endsWith("s"));
+        console.log(`Terminan todos por S?: ${terminanS}`);
+
+        // array en mayúsculas
+        const mayus = dias.map(dia => dia.toUpperCase());
+        console.log(`Array en mayúsculas: ${mayus}`);
+
+        // indicar si algún día es Martes
+        const esMartes = dias.some(dia => dia === "Martes");
+        console.log(`Algún día es "Martes"?: ${esMartes}`);
+    </script>
+</body>
+</html>
