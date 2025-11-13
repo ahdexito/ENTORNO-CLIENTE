@@ -16,11 +16,34 @@ do {
 
         switch (opcion) {
             case 1:
-                let solistas = artistasSolistas(artistas);
-                let nombres = solistas.map(solista => solista.nombre);
-                alert(nombres.join(" | "));
+                console.log(artistasSolistas(artistas));
                 break;
             case 2:
-                
+                let edad = Number(prompt("Introduce edad."));
+                console.log(artistasPorEdad(edad, artistas));
+                break;
+            case 3:
+                console.log(cantidadDeArtistasPorInstrumento(artistas));
+                break;
+            case 4:
+                console.log(cantidadDeArtistasPorGenero(artistas));
+                break;
+            case 5:
+                let cantidadDiscos = Number(prompt("Introduce cantidad de discos."));
+                console.log(artistasConMasDiscosQue(cantidadDiscos, artistas));
+                break;
+            case 6:
+                console.log(artistaConMasEntradasVendidas(artistas));
+                break;
+            case 7:
+                console.log(artistaConMayorRecaudacion(artistas));
+                break;
+            case 8:
+                let anyo = Number(prompt("Introduce año."));
+                console.log(artistasConDiscoEnAnyo(anyo, artistas));
+                break;
+            case 9:
+                console.log(artistaConMasCopias(artistas));
+                break;
         }
 } while (opcion !== 0);

@@ -7,11 +7,11 @@ function artistasSolistas(artistas) {
 
 
 // EJERCICIO 2
-function artistasPorEdad(artistas, edad) {
+function artistasPorEdad(edad, artistas) {
     return artistas.filter(artista => artista.edad === edad);
 }
 
-// console.log(artistasPorEdad(artistas, 24));
+// console.log(artistasPorEdad(24, artistas));
 
 
 // EJERCICIO 3
