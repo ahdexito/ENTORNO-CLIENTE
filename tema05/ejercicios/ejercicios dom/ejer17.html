@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer17</title>
+</head>
+<body>
+    <div id="curso">
+        <p>Módulo 1: 20h</p>
+        <p>Módulo 2: 30h</p>
+    </div>
+    <p id="total"></p> 
+
+    <script>
+        // obtener datos del curso
+        const modulos = document.querySelectorAll("#curso p");
+
+        // variable para acumular horas
+        let totalHoras = 0;
+
+        // recorrer cada módulo y sumar horas
+        modulos.forEach(modulo => {
+            // extraer el número con split y parseInt
+            const horas = parseInt(modulo.textContent.split(":")[1]);
+            totalHoras += horas;
+        });
+
+        // mostrar total en el párrafo
+        const total = document.getElementById("total");
+        total.textContent = `Total: ${totalHoras}h`;
+    </script>
+</body>
+</html>

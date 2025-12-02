@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer22</title>
+</head>
+<body>
+    <ul>
+        <li id="producto1">Laptop</li>
+        <li>Lámpara</li>
+        <li>Mouse</li>
+    </ul>
+    <p id="salida"></p>
+
+    <script>
+        const producto1 = document.getElementById("producto1");
+        const siguiente = producto1.nextElementSibling;
+        const salida = document.getElementById("salida");
+
+        salida.textContent = `Producto siguiente: ${siguiente.textContent}`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer21</title>
+</head>
+<body>
+    <div id="info">
+        <h2>Título del bloque</h2>
+        <p id="detalle">Detalle del contenido</p>
+    </div>
+    <p id="salida"></p>
+
+    <script>
+        const contenedor = document.getElementById("info");
+        const h2 = contenedor.querySelector("h2");
+        const salida = document.getElementById("salida");
+
+        salida.textContent = `Título del bloque: ${h2.textContent}`;
+    </script>
+</body>
+</html>

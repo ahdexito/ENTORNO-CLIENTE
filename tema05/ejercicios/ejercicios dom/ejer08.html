@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer08</title>
+</head>
+<body>
+    <div id="pasos">
+        <p>Encender</p>
+        <p>Configurar</p>
+        <p>Finalizar</p>
+    </div>
+    <ol id="listaPasos"></ol>
+
+    <script>
+        // obtener elementos p dentro de #pasos
+        let pasos = document.querySelectorAll("#pasos p");
+
+        // obtener lista ordenada
+        let lista = document.getElementById("listaPasos");
+
+        // iterar sobre lista y crear cada li
+        pasos.forEach(paso => {
+            let li = document.createElement("li");
+            li.textContent = paso.textContent;
+            lista.appendChild(li);
+        });
+    </script>
+</body>
+</html>

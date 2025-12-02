@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer07</title>
+</head>
+<body>
+    <div id="u">
+        <p>Nombre: Ana</p>
+        <p>Edad: 20</p>
+        <p>Ciudad: Málaga</p>
+    </div>
+    <p id="resumen"></p>
+
+    <script>
+        // obtener elementos p dentro de #u
+        let parrafos = document.querySelectorAll("#u p");
+
+        // crear array con cada p
+        let datos = Array.from(parrafos).map(p => p.textContent);
+
+        // concatenar con " | " y añadir al resumen
+        document.getElementById("resumen").textContent = datos.join(" | ");
+    </script>
+</body>
+</html>

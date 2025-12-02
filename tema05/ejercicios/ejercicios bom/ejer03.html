@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer03</title>
+</head>
+<body>
+    <script>
+        let intervalo = setInterval(() => {
+            let continuar = confirm("¿Deseas continuar?");
+
+            if (!continuar) clearInterval(intervalo);
+        }, 5000);
+    </script>
+</body>
+</html>

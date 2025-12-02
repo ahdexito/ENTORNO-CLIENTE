@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer18</title>
+</head>
+<body>
+    <div id="comentarios">
+        <p>Bien explicado</p>
+        <p>Podría ser mejor</p>
+        <p>Excelente clase</p>
+    </div>
+    <ul id="mostrar"></ul>
+
+    <script>
+        const comentarios = document.querySelectorAll("#comentarios p");
+        const lista = document.getElementById("mostrar");
+
+        comentarios.forEach(comentario => {
+            const li = document.createElement("li");
+            li.textContent = comentario.textContent;
+            lista.appendChild(li);
+        });
+    </script>
+</body>
+</html>

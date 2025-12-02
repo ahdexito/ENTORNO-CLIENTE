@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer16</title>
+</head>
+<body>
+    <div id="productos">
+        <p>Manzana - 1€</p>
+        <p>Pera - 2€</p>
+        <p>Melón - 4€</p>
+    </div>
+    <ul id="catalogo"></ul>
+
+    <script>
+        const productos = document.querySelectorAll("#productos p");
+        const catalogo = document.getElementById("catalogo");
+
+        productos.forEach(p => {
+            const li = document.createElement("li");
+            li.textContent = p.textContent;
+            catalogo.appendChild(li);
+        });
+    </script>
+</body>
+</html>

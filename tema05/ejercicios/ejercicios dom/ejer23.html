@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer23</title>
+</head>
+<body>
+    <ul>
+        <li>Tarea 1</li>
+        <li id="tarea2">Tarea 2</li>
+        <li>Tarea 3</li>
+    </ul>
+    <p id="salida"></p>
+
+    <script>
+        const tareaSelec = document.getElementById("tarea2");
+        const tareaAnterior = tareaSelec.previousElementSibling;
+        const salida = document.getElementById("salida");
+
+        salida.textContent = `Tarea anterior: ${tareaAnterior.textContent}`;
+    </script>
+</body>
+</html>

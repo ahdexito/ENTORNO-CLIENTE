@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer25</title>
+</head>
+<body>
+    <div id="precios">
+        <p>15</p>
+        <p id="central">25</p>
+        <p>35</p>
+    </div>
+    <p id="salida"></p>
+
+    <script>
+        const central = document.getElementById("central");
+        const hermanos = Array
+                .from(central.parentElement.children)
+                .filter(p => p !== central);
+
+        const suma = hermanos.reduce((total, p) => total + Number(p.textContent), 0);
+
+        document.getElementById("salida").textContent = `Suma de precios hermanos: ${suma}`;
+    </script>
+</body>
+</html>

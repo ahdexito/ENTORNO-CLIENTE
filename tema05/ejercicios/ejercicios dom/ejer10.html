@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer10</title>
+</head>
+<body>
+    <p id="marca">ACME</p>
+    <p id="modelo">TurboMax</p>
+    <h1 id="titulo"></h1>
+
+    <script>
+        let marca = document.getElementById("marca").textContent;
+        let modelo = document.getElementById("modelo").textContent;
+        let titulo = document.getElementById("titulo");
+
+        titulo.textContent = marca + " " + modelo;
+    </script>
+</body>
+</html>

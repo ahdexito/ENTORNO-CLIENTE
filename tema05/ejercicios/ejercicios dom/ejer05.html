@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer05</title>
+</head>
+<body>
+    <p id="precioBruto">El precio final es 199</p>
+    <p id="precioFinal"></p>
+
+    <script>
+        let precioBruto = document.getElementById("precioBruto").textContent;
+
+        let numero = precioBruto.match(/\d+/)[0];
+
+        document.getElementById("precioFinal").textContent = numero + " €";
+    </script>
+</body>
+</html>

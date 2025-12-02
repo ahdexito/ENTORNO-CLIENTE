@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer15</title>
+</head>
+<body>
+    <p id="texto">Esto es un ejemplo interesante de análisis</p>
+    <p id="resultado"></p>
+
+    <script>
+        const texto = document.getElementById("texto").textContent;
+        const palabras = texto.split(" ");
+
+        let masLarga = "";
+
+        palabras.forEach(palabra => {
+            if (palabra.length > masLarga.length) {
+                masLarga = palabra;
+            }
+        });
+
+        document.getElementById("resultado").textContent = masLarga;
+    </script>
+</body>
+</html>

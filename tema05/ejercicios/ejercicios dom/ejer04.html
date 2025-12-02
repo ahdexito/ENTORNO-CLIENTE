@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer04</title>
+</head>
+<body>
+    <p id="raw">Pantalla, Batería, Cámara</p>
+    <ul id="lista"></ul>
+
+    <script>
+        // obtener el texto
+        let texto = document.getElementById("raw").textContent;
+
+        // separar por comas y eliminar espacios
+        let items = texto.split(",").map(item => item.trim());
+
+        // obtener lista
+        let lista = document.getElementById("lista");
+
+        // crear elementos li y añadir al ul
+        items.forEach(item => {
+            let li = document.createElement("li");
+            li.textContent = item;
+            lista.appendChild(li);
+        });
+    </script>
+</body>
+</html>

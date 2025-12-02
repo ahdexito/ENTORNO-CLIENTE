@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer20</title>
+</head>
+<body>
+    <table id="factura">
+        <tr><td>Artículo A</td><td>10</td></tr>
+        <tr><td>Artículo B</td><td>20</td></tr>
+    </table>
+    <div id="resumen"></div>
+
+    <script>
+        const tabla = document.getElementById("factura");
+        const resumen = document.getElementById("resumen");
+
+        Array.from(tabla.rows).forEach(fila => {
+            const [articulo, precio] = fila.cells;
+            const p = document.createElement("p");
+            p.textContent = `${articulo.textContent}: ${precio.textContent}€`;
+            resumen.appendChild(p);
+        });
+    </script>
+</body>
+</html>

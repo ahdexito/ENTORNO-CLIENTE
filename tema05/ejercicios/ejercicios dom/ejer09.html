@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer09</title>
+</head>
+<body>
+    <textarea id="editor"><b>Negrita</b> y normal</textarea>
+    <div id="vista"></div>
+
+    <script>
+        let editor = document.getElementById("editor");
+        let vista = document.getElementById("vista");
+
+        vista.innerHTML = editor.value;
+    </script>
+</body>
+</html>

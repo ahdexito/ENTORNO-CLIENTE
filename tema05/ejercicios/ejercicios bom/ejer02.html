@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer02</title>
+</head>
+<body>
+    <script>
+        let porcentaje = Number(prompt("¿Cuánto porcentaje quieres?"))
+
+        if (isNaN(porcentaje) || porcentaje <= 0) {
+            console.log("Porcentaje no válido.");
+        }
+        else {
+            console.log("Porcentaje introducido: " + porcentaje + "%");
+
+            if (confirm("¿Quieres redimensionar al " + porcentaje + "%?")) {
+                let ancho = outerWidth * (porcentaje / 100);
+                let alto = outerHeight * (porcentaje / 100);
+
+                console.log(`Nuevas dimensiones: ${ancho}x${alto}.`);
+                
+                window.resizeTo(ancho, alto);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer12</title>
+</head>
+<body>
+    <table id="t">
+        <tr><td>Nombre</td><td>Luis</td></tr>
+        <tr><td>Edad</td><td>30</td></tr>
+    </table>
+    <textarea id="salida"></textarea>
+
+    <script>
+        const tabla = document.getElementById("t");
+        const salida = document.getElementById("salida");
+        let texto = "";
+
+        // recorrer cada fila de la tabla
+        for (let fila of tabla.rows) {
+            let clave = fila.cells[0].textContent;
+            let valor = fila.cells[1].textContent;
+
+            texto += `${clave}: ${valor}\n`;
+        }
+
+        salida.value = texto;
+    </script>
+</body>
+</html>

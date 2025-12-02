@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer13</title>
+</head>
+<body>
+    <p id="cat">Tecnología</p>
+    <p id="tit">Nuevo microchip</p>
+    <h2 id="final"></h2>
+
+    <script>
+        const categoria = document.getElementById("cat").textContent;
+        const titulo = document.getElementById("tit").textContent;
+
+        const final = `[${categoria}] ${titulo}`;
+
+        document.getElementById("final").textContent = final;
+    </script>
+</body>
+</html>

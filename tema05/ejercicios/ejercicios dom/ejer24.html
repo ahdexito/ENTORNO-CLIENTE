@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer24</title>
+</head>
+<body>
+    <div id="comentarios">
+        <p>Buen post</p>
+        <p>Interesante</p>
+        <p>Gracias por compartir</p>
+    </div>
+    <p id="salida"></p>
+
+    <script>
+        const comentarios = document.getElementById("comentarios").children;
+        const ultimoComentario = comentarios[comentarios.length - 1];
+        const salida = document.getElementById("salida");
+
+        salida.textContent = `Último comentario: ${ultimoComentario.textContent}`;
+    </script>
+</body>
+</html>

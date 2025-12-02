@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer01</title>
+</head>
+<body>
+    <script>
+        // abrir nueva ventana
+        if (confirm("¿Abrir ventana?")) {
+            let ventana = window.open("https://www.linkedin.com/in/ahdexito/",
+            "",
+            "width=500,height=200,left=100,top=200");
+        }
+
+
+        // mostrar ruta completa
+        console.log("Ruta completa de la página: " + location.href);
+
+
+        // mostrar nombre de la ventana actual
+        name = "ejer01";
+        console.log("Nombre de la ventana actual: " + name);
+
+
+        // mostrar información del navegador, su lenguaje y el sistema
+        let infoNavegador = "userAgent: " + navigator.userAgent;
+        console.log(infoNavegador);
+
+        let infoLenguaje = "language: " + navigator.language;
+        console.log(infoLenguaje);
+        
+        let infoSistema = "platform: " + navigator.platform;
+        console.log(infoSistema);
+
+
+        // mostrar propiedades de la ventana
+        console.log(`width: ${screen.width}; height: ${screen.height}.`);
+        console.log(`availWidth: ${screen.availWidth}; availHeight: ${screen.availHeight}`);
+        console.log(`innerWidth: ${window.innerWidth}; innerHeight: ${window.innerHeight}`);
+        console.log(`outerWidth: ${window.outerWidth}; outerHeight: ${window.outerHeight}`);
+
+        // imprimir página
+        if (confirm("¿Imprimir página?")) {
+            print();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer14</title>
+</head>
+<body>
+    <div id="enlaces">
+        <p>Inicio</p>
+        <p>Servicios</p>
+        <p>Contacto</p>
+    </div>
+    <ul id="menu"></ul>
+
+    <script>
+        const parrafos = document.querySelectorAll("#enlaces p");
+
+        const menu = document.getElementById("menu");
+
+        parrafos.forEach(parrafo => {
+            const li = document.createElement("li");
+            li.textContent = parrafo.textContent;
+            menu.appendChild(li);
+        });
+    </script>
+</body>
+</html>
