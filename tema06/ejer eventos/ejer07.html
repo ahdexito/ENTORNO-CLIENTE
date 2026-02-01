@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        div {width: 100px; height:100px;}
+    </style>
+</head>
+<body>
+    <div id="c1" style="background: red"></div>
+    <div id="c2" style="background: white"></div>
+    <div id="c3" style="background: blue"></div>
+
+    <script>
+        const central = document.getElementById("c2");
+
+        central.addEventListener("mouseenter", e => {
+            const origen = event.relatedTarget;
+
+            if (origen && origen.id === "c1") {
+                central.style.backgroundColor = "red";
+            }
+            else if (origen && origen.id === "c3") {
+                central.style.backgroundColor = "blue";
+            }
+            else {
+                central.style.backgroundColor = "white";
+            }
+        });
+    </script>
+</body>
+</html>

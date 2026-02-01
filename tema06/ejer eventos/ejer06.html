@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ejer06</title>
 </head>
 <body>
-    
+    <div>
+        <label>Coordenada X</label>
+        <input id="cX"> 
+    </div>
+    <div>
+        <label>Coordenada Y</label>
+        <input id="cY"> 
+    </div>
+    <script>
+        document.addEventListener("mousemove", e => {
+            const cX = document.getElementById("cX");
+            const cY = document.getElementById("cY");
+
+            cX.value = e.clientX;
+            cY.value = e.clientY;
+        });
+    </script>
 </body>
 </html>
