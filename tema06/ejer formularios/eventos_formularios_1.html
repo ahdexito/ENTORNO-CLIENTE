@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="eventos_formularios_1.css">
+    <title>eComunitree | Registro</title>
+    <script src="https://kit.fontawesome.com/bc8e4b1cda.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <img src="./img/logo-transparencia.png" alt="logotipo">
+        <h1>eComunitree</h1>
+    </header>
+
+    <h2>Gestiona tu comunidad de forma fácil y digital.</h2>
+
+    <main>
+        <form action="#" id="formulario" novalidate>
+            <h3>Introduce tus datos</h3>
+            <hr>
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre" required pattern="[A-Za-zÁ-ú\s]+">
+            <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" required pattern="[A-Za-zÁ-ú\s]+">
+            <input type="number" name="edad" id="edad" placeholder="Edad" min="0" max="105" required>
+            <input type="nif" name="nif" id="nif" placeholder="NIF" required pattern="^[0-9]{8}-[A-Za-z]$">
+            <!-- 
+              Patrón NIF:
+              # ^ inicio de cadena (sin texto previo)
+              # [0-9]{8} 8 dígitos
+              # - guón explícito
+              # [A-Za-z] una letra únicamente
+              # $ final de cadena (sin texto posterior)
+            -->
+            <input type="email" name="email" id="email" placeholder="Email" required pattern="^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,4}$">
+            <!-- 
+              # ^ inicio de cadena (sin texto previo)
+              # [\w.-]+ uno o más caracteres alfanuméricos, puntos o guiones
+              # @ símbolo arroba
+              # [\w.-]+ uno o más caracteres alfanuméricos, puntos o guiones
+              # \. punto literal
+              # [a-zA-Z]{2,4} entre 2 y 4 letras para la extensión
+              # $ final de cadena (sin texto posterior)
+            -->
+            <select id="provincia" name="provincia" required>
+              <option value="">Selecciona una provincia...</option>
+              <option value="A">Alicante</option>
+              <option value="C">Castellón</option>
+              <option value="V">Valencia</option>
+            </select>
+            <hr>
+            <div id="errores" style="color: #fff; font-size: 1.5em;"></div>
+            <div class="register-footer">
+                <a href="login.html">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+                <button type="submit">Registrarme</button>
+            </div>
+        </form>
+    </main>
+    <script src="eventos_formularios_1.js"></script>
+</body>
+</html>
