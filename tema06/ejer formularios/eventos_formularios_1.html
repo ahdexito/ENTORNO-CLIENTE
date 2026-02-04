@@ -22,31 +22,46 @@
             <input type="text" name="nombre" id="nombre" placeholder="Nombre" required pattern="[A-Za-zÁ-ú\s]+">
             <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" required pattern="[A-Za-zÁ-ú\s]+">
             <input type="number" name="edad" id="edad" placeholder="Edad" min="0" max="105" required>
-            <input type="nif" name="nif" id="nif" placeholder="NIF" required pattern="^[0-9]{8}-[A-Za-z]$">
+            <input type="text" name="nif" id="nif" placeholder="NIF" required pattern="^[0-9]{8}-[A-Za-z]$">
             <!-- 
-              Patrón NIF:
-              # ^ inicio de cadena (sin texto previo)
-              # [0-9]{8} 8 dígitos
-              # - guón explícito
-              # [A-Za-z] una letra únicamente
-              # $ final de cadena (sin texto posterior)
+                Patrón NIF:
+                # ^ inicio de cadena (sin texto previo)
+                # [0-9]{8} 8 dígitos
+                # - guón explícito
+                # [A-Za-z] una letra únicamente
+                # $ final de cadena (sin texto posterior)
             -->
             <input type="email" name="email" id="email" placeholder="Email" required pattern="^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,4}$">
             <!-- 
-              # ^ inicio de cadena (sin texto previo)
-              # [\w.-]+ uno o más caracteres alfanuméricos, puntos o guiones
-              # @ símbolo arroba
-              # [\w.-]+ uno o más caracteres alfanuméricos, puntos o guiones
-              # \. punto literal
-              # [a-zA-Z]{2,4} entre 2 y 4 letras para la extensión
-              # $ final de cadena (sin texto posterior)
+                # ^ inicio de cadena (sin texto previo)
+                # [\w.-]+ uno o más caracteres alfanuméricos, puntos o guiones
+                # @ símbolo arroba
+                # [\w.-]+ uno o más caracteres alfanuméricos, puntos o guiones
+                # \. punto literal
+                # [a-zA-Z]{2,4} entre 2 y 4 letras para la extensión
+                # $ final de cadena (sin texto posterior)
             -->
             <select id="provincia" name="provincia" required>
-              <option value="">Selecciona una provincia...</option>
-              <option value="A">Alicante</option>
-              <option value="C">Castellón</option>
-              <option value="V">Valencia</option>
+                <option value="">Selecciona una provincia...</option>
+                <option value="A">Alicante</option>
+                <option value="C">Castellón</option>
+                <option value="V">Valencia</option>
             </select>
+            <div id="genero">
+                <label for="genero">Sexo:</label>
+                <input type="radio" name="genero" id="genero_h" value="H" required> Hombre
+                <input type="radio" name="genero" id="genero_m" value="M" required> Mujer
+            </div>
+            <input type="text" name="fecha" id="fecha" placeholder="Fecha (dd/mm/aaaa o dd-mm-aaaa)" required pattern="[0-9]{2}[/-][0-9]{2}[/-][0-9]{4}">
+            <!-- 
+                # ^ inicio de cadena (sin texto previo)
+                # [0-9]{2} 2 dígitos para el día
+                # [/-] separador o / o -
+                # [0-9]{2} 2 dígitos para el mes
+                # [/-] separador o / o -
+                # [0-9]{4} 4 dígitos para el año
+                # $ final de cadena (sin texto posterior)
+            -->
             <hr>
             <div id="errores" style="color: #fff; font-size: 1.5em;"></div>
             <div class="register-footer">

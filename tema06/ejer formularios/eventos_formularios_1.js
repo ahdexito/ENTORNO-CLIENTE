@@ -5,6 +5,10 @@ const nombre = document.getElementById("nombre");
 const apellidos = document.getElementById("apellidos");
 const edad = document.getElementById("edad");
 const nif = document.getElementById("nif");
+const email = document.getElementById("email");
+const provincia = document.getElementById("provincia");
+const genero = document.getElementById("genero_h");
+const fecha = document.getElementById("fecha");
 
 formulario.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -18,21 +22,22 @@ formulario.addEventListener("submit", function (e) {
         // VALIDAR CAMPO NO VACÍO
         if (campo.validity.valueMissing) {
 
+            // (EJERCICIO 6)
+            if (etiqueta === "GENERO") { return `Debe seleccionar una opción de GÉNERO`; }
+
             // (EJERCICIO 5)
-            if (etiqueta === "PROVINCIA") {
-                return `Debe seleccionar una provincia de la lista.`
-            }
+            if (etiqueta === "PROVINCIA") { return `Debe seleccionar una PROVINCIA de la lista.`; }
 
             // (EJERCICIO 1)
             return `El campo ${etiqueta} es obligatorio.`;
         }
 
         // VALIDAR PATRONES Y FORMATOS
-        if (campo.validity.patternMismatch || campo.validity.typeMismatch) {
+        if (!campo.validity.valid) {
 
-            // VALIDAR EMAIL (EJERCICIO 4)
-            if (etiqueta === "EMAIL") {
-                return `El formato del EMAIL no es correcto.`
+            // (EJERCICIO 7)
+            if (etiqueta === "FECHA") {
+                return "El formato de fecha debe ser dd/mm/aaaa o dd-mm-aaaa."; 
             }
 
             // VALIDAR NIF (EJERCICIO 3)
@@ -40,13 +45,20 @@ formulario.addEventListener("submit", function (e) {
                 return `El NIF debe tener 8 números y una letra`;
             }
 
+            // VALIDAR EMAIL (EJERCICIO 4)
+            if (etiqueta === "EMAIL") {
+                return `El formato del EMAIL no es correcto.`
+            }
+
             // VALIDAR PATRÓN NO NUMÉRICO (EJERCICIO 1)
-            return `El campo ${etiqueta} solo debe contener letras.`;
+            if ((etiqueta === "NOMBRE" || etiqueta === "APELLIDOS") && campo.validity.patternMismatch) {
+                return `El campo ${etiqueta} solo debe contener letras.`;
+            }
         }
 
         // VALIDAR RANGO DE EDAD (EJERCICIO 2)
         if (campo.validity.rangeUnderflow || campo.validity.rangeOverflow) {
-            return divErrores.textContent = `El campo ${etiqueta} debe estar entre 0 y 105.`;
+            return `El campo ${etiqueta} debe estar entre 0 y 105.`;
         }
 
         // VALIDAR CUALQUIER OTRO ERROR
@@ -60,22 +72,26 @@ formulario.addEventListener("submit", function (e) {
 
     // Validar campos de abajo hacia arriba para se haga foco al primero
     const campos = [
+        {elem: fecha, nombre: "FECHA"},
+        {elem: genero, nombre: "GENERO"},
         {elem: provincia, nombre: "PROVINCIA"},
         {elem: email, nombre: "EMAIL"},
         {elem: nif, nombre: "NIF"},
         {elem: edad, nombre: "EDAD"},
         {elem: apellidos, nombre: "APELLIDOS"},
-        {elem: nombre, nombre: "NOMBRE"}
+        
     ];
 
-    campos.forEach(campo => {
+    for (const campo of campos) {
         const mensaje = getErrorMsg(campo.elem, campo.nombre);
+
         if (mensaje != "") {
             divErrores.textContent = mensaje;
             campo.elem.focus();
             esValido = false;
+            break;
         }
-    });
+    }
 
     if (esValido) {
         alert("Formulario enviado.");

@@ -102,6 +102,15 @@ html body main form select {
   border-radius: 25px;
   font-size: 1.1em;
 }
+html body main form #genero {
+  width: 100%;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1em;
+  background-color: #fff;
+  display: flex;
+}
 html body main form .recuerdame {
   display: flex;
   align-items: center;
