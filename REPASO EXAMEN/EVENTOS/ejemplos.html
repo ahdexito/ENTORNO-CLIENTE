@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 1. ASIGNAR EVENTOS -->
+    
+    <!-- a. Inline HTML -->
+    <div onclick="miFuncion()">Pulsa</div>
+
+    <!-- b. Desde JavScript (propiedad) -->
+    <script>
+        elemento.onclick = function () {};
+    </script>
+
+    <!-- c. addEventListener (mejor opción) -->
+    <script>
+        elemento.addEventListener("click", funcion, false);
+    </script>
+
+<!-- 2. OBJETO EVENT -->
+    <script>
+        function pulsar(event) {
+            // elemento que dispara evento
+            console.log(event.target);
+
+            // id del elemento
+            console.log(event.target.id);
+
+            // coordenada X
+            console.log(event.clientX);
+
+            // coordenada Y
+            console.log(event.clientY);
+
+            // tecla pulsada
+            console.log(event.key);
+
+            // desde dónde viene el ratón
+            console.log(event.relatedTarget);
+        }
+    </script>
+
+<!-- 3. EVENTOS MÁS IMPORTANTES -->
+    <!-- 
+        - RATÓN:
+            - click
+            - mouseover
+            - mouseout
+            - mousemove
+
+        - TECLADO:
+            - keypress
+            - keydown
+            - keyup
+
+        - DOCUMENTO:
+            - window.onload
+            - document.onmousemove
+    -->
+
+<!-- 4. BLOQUEAR COMPORTAMIENTO POR DEFECTO -->
+    <script>
+        event.preventDefault();
+    </script>
+
+<!-- 5. ACCESO AL DOM -->
+    <script>
+        document.getElementById("id");
+        document.querySelector("selector");
+
+        // NAVEGACIÓN
+        elemento.parentNode;
+        elemento.children;
+        elemento.firstElementChild;
+        elemento.lastElementChild;
+        elemento.nextElementSibling;
+        elemento.previousElementSibling;
+    </script>
+
+<!-- 6. CREAR Y ELIMINAR NODOS -->
+    <script>
+        const nuevo = document.createElement("p");
+        nuevo.textContent = "Texto";
+        padre.appendChild(nuevo);
+
+        // Insertar antes
+        padre.insertBefore(nuevo, referencia);
+
+        // Eliminar
+        padre.removeChild(hijo);
+
+        // Reemplazar
+        padre.replaceChild(nuevo, viejo);
+
+        // Clonar
+        elemento.cloneNode(true);
+    </script>
+</body>
+</html>

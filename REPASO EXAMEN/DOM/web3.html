@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PRACTICAR DOM: 3</h1>
+
+    <h2>EJERCICIO 21: AÑADIR HIJO AL FINAL DEL CONTENEDOR</h2>
+
+    <div id="lista21">
+        <p>Elemento 1</p>
+    </div>
+
+    <script>
+        const lista = document.getElementById("lista21");
+
+        const nuevo = document.createElement("p");
+        nuevo.textContent = "Elemento 2";
+
+        lista.appendChild(nuevo);
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 22: INSERTAR UN ELEMENTO DESPUÉS DE UNO CONCRETO</h2>
+
+    <ul id="menu">
+        <li id="inicio22">Inicio</li>
+        <li>Contacto</li>
+    </ul>
+
+    <script>
+        window.onload = function() {
+            const inicio = document.getElementById("inicio22");
+            const padre = inicio.parentNode;
+
+            const nuevo = document.createElement("li");
+            nuevo.textContent = "Servicios";
+
+            if (inicio.nextElementSibling) {
+                padre.insertBefore(nuevo, inicio.nextElementSibling);
+            } else {
+                padre.appendChild(nuevo);
+            }
+        }
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 23: ELIMINAR EL ÚLTIMO HIJO</h2>
+
+    <div id="bloque23">
+        <p>A</p>
+        <p>B</p>
+        <p>C</p>
+    </div>
+
+    <script>
+        const bloque = document.getElementById("bloque23");
+        bloque.removeChild(bloque.lastElementChild);
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 24: REEMPLAZAR UN ELEMENTO POR OTRO</h2>
+
+    <div id="contenedor24">
+        <p id="viejo24">Texto antiguo</p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const viejo = document.getElementById("viejo24");
+
+            const nuevo = document.createElement("p");
+            nuevo.textContent = "Texto nuevo";
+
+            viejo.parentNode.replaceChild(nuevo, viejo);
+            }
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 25: AÑADIR UN ELEMENTO AL PRINCIPIO</h2>
+
+    <ul id="lista25">
+        <li>Segundo</li>
+    </ul>
+
+    <script>
+        window.onload = function() {
+            const lista25 = document.getElementById("lista25");
+
+            const primero = document.createElement("li");
+            primero.textContent = "Primero";
+
+            lista25.insertBefore(primero, lista25.firstElementChild);
+        }
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 26: ELIMINAR EL HERMANO SIGUIENTE DE UN ELEMENTO</h2>
+
+    <ul>
+        <li id="base26">Uno</li>
+        <li>Dos</li>
+        <li>Tres</li>
+    </ul>
+
+    <script>
+        window.onload = function() {
+            const base26 = document.getElementById("base26");
+            const siguiente = base26.nextElementSibling;
+
+            base26.parentNode.removeChild(siguiente);
+        }
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 27: CREAR UNA LISTA A PARTIR DE LOS HIJOS DE OTRO CONTENEDOR</h2>
+
+    <div id="datos27">
+        <p>Rojo</p>
+        <p>Verde</p>
+    </div>
+
+    <ul id="colores27"></ul>
+
+    <script>
+        window.onload = function() {
+            const datos = document.getElementById("datos27");
+            const colores = document.getElementById("colores27");
+
+            for (let hijo of datos.children) {
+                const li = document.createElement("li");
+                li.textContent = hijo.textContent;
+                colores.appendChild(li);
+            }
+        }
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 28: VACIAR COMPLETAMENTE UN CONTENEDOR</h2>
+
+    <div id="caja28">
+        <p>Uno</p>
+        <p>Dos</p>
+    </div>
+
+    <script>
+        const caja = document.getElementById("caja28");
+
+        while (caja.firstElementChild) {
+            caja.removeChild(caja.firstElementChild);
+        }
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 29: DUPLICAR UN ELEMENTO Y AÑADIRLO AL FINAL</h2>
+
+    <ul id="lista29">
+        <li id="original29">Item</li>
+    </ul>
+
+    <script>
+        const original29 = document.getElementById("original29");
+
+        const copia29 = original29.cloneNode(true);
+        original29.parentNode.appendChild(copia29);
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 30: CREAR UN ELEMENTO USANDO EL TEXTO DEL HERMANO ANTERIOR</h2>
+
+    <div>
+        <p>Texto base</p>
+        <p id="objetivo">Destino</p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const objetivo = document.getElementById("objetivo");
+            const anterior = objetivo.previousElementSibling;
+
+            const nuevo = document.createElement("p");
+            nuevo.textContent = "Copia: " + anterior.textContent;
+
+            objetivo.parentNode.appendChild(nuevo);
+        }
+    </script>
+</body>
+</html>

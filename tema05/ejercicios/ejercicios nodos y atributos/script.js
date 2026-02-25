@@ -1,4 +1,5 @@
 // EJERCICIO 1
+// AÑADIR UN NUEVO USUARIO AL FINAL DE LA LISTA
 {
     const listaUsuarios = document.querySelector("#usuarios ul");
 
@@ -11,6 +12,7 @@
 
 
 // EJERCICIO 2
+// INSERTAR UN NUEVO USUARIO AL PRINCIPIO
 {
     const listaUsuarios = document.querySelector("#usuarios ul");
 
@@ -23,6 +25,7 @@
 
 
 // EJERCICIO 3
+// ELIMINAR AL USUARIO CON CLASE 'ACTIVO'
 {
     const activo = document.querySelector("#usuarios .activo");
 
@@ -33,6 +36,7 @@
 
 
 // EJERCICIO 4
+// MARCAR A TODOS LOS USUARIOS COMO 'VERIFICADOS'
 {
     const usuarios = document.querySelectorAll("#usuarios .user");
 
@@ -41,6 +45,7 @@
 
 
 // EJERCICIO 5
+// CREAR UN PRODUCTO NUEVO DESDE CERO
 {
     // obtener section de productos
     const seccionProductos = document.getElementById("productos");
@@ -66,6 +71,7 @@
 
 
 // EJERCICIO 6
+// CLONAR UN PRODUCTO
 {
     // obtener producto
     const productoOriginal = document.querySelector('.producto');
@@ -87,6 +93,7 @@
 
 
 // EJERCICIO 7
+// SUBIR EL PRECIO DE TODOS LOS PRODUCTOS
 {
     // obtener todos los productos
     const productos = document.querySelectorAll('.producto');
@@ -114,6 +121,7 @@
 
 
 // EJERCICIO 8
+// CREAR ÍNDICE DINÁMICO DE PRODUCTOS
 {
     // obtener referencia del body y nombres de productos
     const body = document.body;
@@ -144,6 +152,7 @@
 
 
 // EJERCICIO 9
+// MOVER EL PRODUCTO MÁS CARO AL PRIMER LUGAR
 {
     // obtener sección y todos sus productos
     const seccionProductos = document.getElementById("productos");
@@ -176,6 +185,7 @@
 
 
 // EJERCICIO 10
+// CONVERTIR LA SECCIÓN USUARIOS EN UNA TARJETA COMPACTA
 {
     // obtener sección de usuarios y la lista
     const seccionUsuarios = document.getElementById("usuarios");

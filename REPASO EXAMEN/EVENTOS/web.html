@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            padding: 10px;
+            margin: 10px;
+            width: fit-content;
+            border: 2px solid darkblue;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>PRACTICAR EVENTOS</h1>
+
+    <h2>EJERCICIO 1: EVENTO INLINE CON onclick</h2>
+
+    <div onclick="alert('Pulsaste sobre el botón')">PULSA AQUÍ</div>
+
+    <!-- ----------------------------------------- -->
+
+    <h2>EJERCICIO 2: onmouseover LLAMANDO A FUNCIÓN</h2>
+
+    <div onmouseover="cambiar()">PASA POR AQUÍ</div>
+    <div id="efecto2">EFECTOS DEL MOVIMIENTO</div>
+
+    <script>
+        function cambiar() {
+            document.getElementById("efecto2").style.background = "lightblue";
+        }
+    </script>
+
+    <!-- ----------------------------------------- -->
+
+    <h2>EJERCICIO 3: ASIGNAR EVENTO DESDE JS (click boton)</h2>
+
+    <form>
+        <input type="number" id="precio3">
+        <input type="number" id="cantidad3">
+        <input type="button" id="calcular3" value="Calcular">
+        <input id="total3" readonly>
+    </form>
+
+    <script>
+        document.getElementById("calcular3").onclick = function () {
+            const p = document.getElementById("precio3").value;
+            const c = document.getElementById("cantidad3").value;
+            document.getElementById("total3").value = p * c;
+        }
+    </script>
+
+    <!-- ----------------------------------------- -->
+
+    <h2>EJERCICIO 4: window.load + EVENTOS DE RATÓN</h2>
+
+    <div id="cuadro4">BLOQUE</div>
+
+    <script>
+        window.onload = function () {
+            const cuadro = document.getElementById("cuadro4");
+
+            cuadro.onmouseover = function () {
+                this.style.background = "lightblue";
+            };
+
+            cuadro.onmouseout = function () {
+                this.style.background = "white";
+            };
+        }
+    </script>
+
+    <!-- ----------------------------------------- -->
+
+    <h2>EJERCICIO 5: UNA ÚNICA FUNCIÓN + OBJETO event</h2>
+
+    <div id="b1" onclick="pulsar(event)">Botón 1</div>
+    <div id="b2" onclick="pulsar(event)">Botón 2</div>
+
+    <script>
+        function pulsar(event) {
+            alert("ID pulsado: " + event.target.id);
+        }
+    </script>
+
+    <!-- ----------------------------------------- -->
+
+    <h2>EJERCICIO 6: MOVIMIENTO DEL RATÓN POR EL DOCUMENTO (COORDENADAS)</h2>
+
+    <div>Coordenada X <input id="cX"></div>
+    <div>Coordenada Y <input id="cY"></div>
+
+    <script>
+        document.onmousemove = function (event) {
+            document.getElementById("cX").value = event.clientX;
+            document.getElementById("cY").value = event.clientY;
+        };
+    </script>
+
+    <!-- ----------------------------------------- -->
+
+    <h2>EJERCICIO 7: ARRASTRAR COLOR SEGÚN ORIGEN (relatedTarget)</h2>
+
+    <div id="rojo" style="background-color: red; margin: 0; width: 200px;"></div>
+    <div id="centro" style="margin: 0; width: 200px;"></div>
+    <div id="azul" style="background-color: lightblue; margin: 0; width: 200px;"></div>
+
+    <script>
+        document.getElementById("centro").onmouseover = function (event) {
+            const origen = event.relatedTarget;
+
+            if (origen && origen.id === "rojo") {
+                this.style.background = "red";
+            }
+            else if (origen && origen.id === "azul") {
+                this.style.background = "lightblue";
+            } else {
+                this.style.background = "white";
+            }
+        }
+    </script>
+
+    <!-- ----------------------------------------- -->
+
+    <h2>BLOQUEAR NÚMEROS EN INPUT (CANCELAR EVENTO)</h2>
+
+    <input type="text" id="letras">
+
+    <script>
+        document.getElementById("letras").onkeypress = function (event) {
+            if (event.key >= "0" && event.key <= "9") {
+                event.preventDefault();
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+/* Variables de color para facilitar cambios */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-color: #333;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Estilo del Contenedor de Errores */
+#errores {
+    background-color: #fff5f5;
+    border-left: 5px solid var(--error-color);
+    color: var(--error-color);
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: none; /* Se activa vía JS */
+}
+
+/* Solo se muestra si tiene contenido */
+#errores:not(:empty) {
+    display: block;
+    animation: fadeIn 0.5s ease-in;
+}
+
+#errores ul {
+    margin: 0;
+    padding-left: 25px;
+    list-style-type: square;
+}
+
+/* Estilo del Formulario */
+#newEvent {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+/* --- CORRECCIÓN DE CAMPOS RECORTADOS --- */
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(2.8rem + 2px); /* Altura fija para evitar recortes en Provincia */
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: #fff;
+    border: 2px solid #e1e1e1;
+    border-radius: 8px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Ajuste específico para el select de Provincia */
+select.form-control {
+    padding-top: 0;
+    padding-bottom: 0;
+    vertical-align: middle;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
+    outline: none;
+}
+
+/* Resaltado de campos inválidos */
+.is-invalid {
+    border-color: var(--error-color) !important;
+    background-color: #fff8f8;
+}
+
+.is-invalid:focus {
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+/* Botón personalizado */
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 14px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #357abd;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+}
+
+/* Estilo para los Radio Buttons */
+.form-check-inline {
+    margin-top: 8px;
+    margin-right: 20px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.form-check-input {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    #newEvent {
+        padding: 20px;
+    }
+    
+    .container {
+        margin: 10px auto;
+    }
+}

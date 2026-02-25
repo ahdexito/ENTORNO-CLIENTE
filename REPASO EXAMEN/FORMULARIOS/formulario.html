@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>UT6-EVENTOS_FORMULARIOS_1_Actividades</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <style>
+        #errores { color: red; margin-bottom: 15px; font-weight: bold; }
+        .is-invalid { border-color: #dc3545; }
+    </style>
+    <link rel="stylesheet" href="formulario.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Events Manager - Validación</a>
+    </nav>
+
+    <div class="container mt-4">
+        <div id="errores"></div>
+
+        <form action="#" id="newEvent" novalidate>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="name">Nombre</label>
+                    <input type="text" class="form-control" id="name" placeholder="Nombre">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="surname">Apellidos</label>
+                    <input type="text" class="form-control" id="surname" placeholder="Apellidos">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="age">Edad</label>
+                    <input type="number" class="form-control" id="age">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="nif">NIF (12345678-A)</label>
+                    <input type="text" class="form-control" id="nif">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="email">E-mail</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="province">Provincia</label>
+                    <select id="province" class="form-control">
+                        <option value=""></option>
+                        <option value="madrid">Madrid</option>
+                        <option value="barcelona">Barcelona</option>
+                        <option value="valencia">Valencia</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Sexo</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="sex" id="sexH" value="H">
+                        <label class="form-check-label" for="sexH">Hombre</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="sex" id="sexM" value="M">
+                        <label class="form-check-label" for="sexM">Mujer</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="phone">Teléfono</label>
+                    <input type="text" class="form-control" id="phone">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="date">Fecha (dd/mm/aaaa o dd-mm-aaaa)</label>
+                    <input type="text" class="form-control" id="date" placeholder="01/01/2024">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="time">Hora (hh:mm)</label>
+                    <input type="text" class="form-control" id="time" placeholder="12:30">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="btnEnviar">Añadir Evento</button>
+        </form>
+    </div>
+
+    <script src="validar.js"></script>
+</body>
+</html>
