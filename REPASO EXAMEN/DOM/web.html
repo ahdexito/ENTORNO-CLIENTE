@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PRACTICAR DOM</h1>
+
+
+    <h2>EJERCICIO 1: MOSTRAR TEXTO EN MAYÚSCULAS</h2>
+
+    <p id="texto1">hola mundo</p>
+    <p id="salida"></p>
+
+    <script>
+        const texto = document.getElementById("texto1").textContent;
+        document.getElementById("salida").textContent = texto.toUpperCase();
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 2: CONTAR CARACTERES DE UN CAMPO</h2>
+
+    <input id="dato" value="Programación">
+    <p id="longitud"></p>
+
+    <script>
+        const valor = document.getElementById("dato").value;
+        document.getElementById("longitud").textContent = "Caracteres: " + valor.length;
+    </script>
+    
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 3: SEPARAR PALABRAS EN LISTA</h2>
+
+    <p id="frase">HTML CSS JS</p>
+    <ul id="lista"></ul>
+
+    <script>
+        const palabras = document.getElementById("frase").textContent.split(" ");
+        const lista = document.getElementById("lista");
+
+        palabras.forEach(p => {
+            const li = document.createElement("li");
+            li.textContent = p;
+            lista.appendChild(li);
+        });
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 4: MOSTRAR NÚMERO DOBLE</h2>
+
+    <p id="numero">15</p>
+    <p id="resultado"></p>
+
+    <script>
+        const num = parseInt(document.getElementById("numero").textContent);
+        document.getElementById("resultado").textContent = "Doble: " + (num * 2);
+    </script>
+
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 5: CAMBIAR IMAGEN SEGÚN TEXTO</h2>
+
+    <p id="animal">gato</p>
+    <img id="foto">
+
+    <script>
+        const animal = document.getElementById("animal").textContent;
+        document.getElementById("foto").src = animal + ".jpg";
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 6: CREAR ENLACES DESDE TEXTO</h2>
+
+    <p id="urls">google.com, microsoft.com</p>
+    <ul id="links"></ul>
+
+    <script>
+        const urls = document.getElementById("urls").textContent.split(", ");
+        const ul = document.getElementById("links");
+
+        urls.forEach(u => {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = "https://" + u;
+            a.textContent = u;
+            li.appendChild(a);
+            ul.appendChild(li);
+        });
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 7: MOSTRAR PRIMERA PALABRA</h2>
+
+    <p id="texto2">Aprender JavaScript es útil</p>
+    <p id="primera"></p>
+
+    <script>
+        const frase = document.getElementById("texto2").textContent;
+        document.getElementById("primera").textContent = frase.split(" ")[0];
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 8: SUMAR NÚMEROS DE UNA LISTA</h2>
+
+    <ul id="nums">
+        <li>5</li>
+        <li>10</li>
+        <li>15</li>
+    </ul>
+    <p id="total"></p>
+
+    <script>
+        let suma = 0;
+        document.querySelectorAll("#nums li").forEach(li => {
+            suma += parseInt(li.textContent);
+        });
+        document.getElementById("total").textContent = "Total: " + suma;
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 9: MOSTRAR CONTENIDO INVERTIDO</h2>
+
+    <p id="palabra">javascript</p>
+    <p id="invertida"></p>
+
+    <script>
+        const palabra = document.getElementById("palabra").textContent;
+        document.getElementById("invertida").textContent = palabra.split("").reverse().join("");
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 10: COPIAR CONTENIDO ENTRE DIVS</h2>
+
+    <div id="origen">Contenido original</div>
+    <div id="destino"></div>
+
+    <script>
+        const contenido = document.getElementById("origen").innerHTML;
+        document.getElementById("destino").innerHTML = contenido;
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 11: MOSTRAR EL PADRE DE UN ELEMENTO</h2>
+
+    <div id="contenedor11">
+        <p id="hijo11">Texto</p>
+    </div>
+    <p id="salida11"></p>
+
+    <script>
+        const hijo = document.getElementById("hijo11");
+        document.getElementById("salida11").textContent = "Padre: " + hijo.parentNode.id;
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 12: MOSTRAR EL PRIMER HIJO DE UN CONTENDOR</h2>
+
+    <ul id="lista12">
+        <li>Uno</li>
+        <li>Dos</li>
+    </ul>
+    <p id="salida12"></p>
+
+    <script>
+        const lista12 = document.getElementById("lista12");
+        document.getElementById("salida12").textContent = lista12.firstElementChild.textContent;
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 13: MOSTRAR EL ÚLTIMO HIJO</h2>
+
+    <div id="bloque13">
+        <p>A</p>
+        <p>B</p>
+        <p>C</p>
+    </div>
+    <p id="salida13"></p>
+
+    <script>
+        const bloque = document.getElementById("bloque13");
+        document.getElementById("salida13").textContent = bloque13.lastElementChild.textContent;
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 14: MOSTRAR NÚMERO DE HIJOS</h2>
+
+    <div id="caja14">
+        <p>Item 1</p>
+        <p>Item 2</p>
+        <p>Item 3</p>
+    </div>
+    <p id="salida14"></p>
+
+    <script>
+        const caja14 = document.getElementById("caja14");
+        document.getElementById("salida14").textContent = "Hijos: " + caja14.children.length;
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 15: MOSTRAR HERMANO SIGUIENTE</h2>
+
+    <ul>
+        <li id="actual15">Primero</li>
+        <li>Segundo</li>
+        <li>Tercero</li>
+    </ul>
+    <p id="salida15"></p>
+
+    <script>
+        const actual15 = document.getElementById("actual15");
+        document.getElementById("salida15").textContent = 
+            "Siguiente: " + actual15.nextElementSibling.textContent;
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 16: MOSTRAR HERMANO ANTERIOR</h2>
+
+    <ul>
+        <li>Uno</li>
+        <li id="medio16">Dos</li>
+        <li>Tres</li>
+    </ul>
+    <p id="salida16"></p>
+
+    <script>
+        const medio16 = document.getElementById("medio16");
+        document.getElementById("salida16").textContent =
+            "Anterior: " + medio16.previousElementSibling.textContent;
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 17: MOSTRAR TODOS LOS HIJOS CON UN BUCLE</h2>
+
+    <div id="datos17">
+        <p>Rojo</p>
+        <p>Verde</p>
+        <p>Azul</p>
+    </div>
+    <textarea id="salida17" style="height: 100px;"></textarea>
+
+    <script>
+        const datos17 = document.getElementById("datos17");
+        let resultado17 = "";
+
+        for (let hijo of datos17.children) {
+            resultado17 += hijo.textContent + "\n";
+        }
+
+        document.getElementById("salida17").value = resultado17;
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 18: MOSTRAR EL ABUELO DE UN ELEMENTO</h2>
+
+    <div id="abuelo18">
+        <div>
+            <span id="nieto18">Texto</span>
+        </div>
+    </div>
+    <p id="salida18"></p>
+
+    <script>
+        const nieto18 = document.getElementById("nieto18");
+        document.getElementById("salida18").textContent =
+            "Abuelo: " + nieto18.parentNode.parentNode.id;
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 19: CAMBIAR TEXTO DEL HERMANO SIGUIENTE</h2>
+
+    <div>
+        <p id="base19">Elemento base</p>
+        <p>Modificar</p>
+    </div>
+
+    <script>
+        const base19 = document.getElementById("base19");
+        base19.nextElementSibling.textContent = "Texto cambiado";
+    </script>
+
+    <!-- ----------------------------------------------------- -->
+
+    <h2>EJERCICIO 20: MOSTRAR EL ÍNDICE DE UN ELEMENTO DENTRO DE SU PADRE</h2>
+
+    <ul id="lista20">
+        <li>A</li>
+        <li id="seleccionado">B</li>
+        <li>C</li>
+    </ul>
+    <p id="salida20"></p>
+
+    <script>
+        const seleccionado = document.getElementById("seleccionado")
+        const hijos = seleccionado.parentNode.children;
+
+        let indice;
+
+        for (let i = 0; i < hijos.length; i++) {
+            if (hijos[i] === seleccionado) {
+                indice = i;
+            }
+        }
+
+        document.getElementById("salida20").textContent = "Índice: " + indice;
+    </script>
+</body>
+</html>
