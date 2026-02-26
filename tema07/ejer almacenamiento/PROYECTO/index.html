@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Collector MVC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="login-section">
+            <h1>Acceso al Sistema</h1>
+            <form id="login-form">
+                <input type="email" name="email" placeholder="Email (alumno@daw.com)" required>
+                <input type="password" name="password" placeholder="Contraseña (123)" required>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+        </div>
+
+        <div id="app-section" style="display: none;">
+            <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h1>Mis Juegos</h1>
+                <div>
+                    <span id="user-email" style="margin-right: 10px; color: var(--primary);"></span>
+                    <button id="logout-btn" style="background: var(--danger); padding: 5px 10px; font-size: 0.8rem;">Salir</button>
+                </div>
+            </header>
+
+            <form id="game-form">
+                <input type="text" id="game-title" placeholder="Título del juego" required>
+                <input type="text" id="game-platform" placeholder="Plataforma" required>
+                <button type="submit">Añadir</button>
+            </form>
+
+            <div id="game-grid">
+                </div>
+        </div>
+    </div>
+
+    <script type="module" src="src/index.js"></script>
+</body>
+</html>

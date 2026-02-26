@@ -1,13 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EJERCICIO MÓDULOS</title>
+    <title>Task Master MVC</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Leer consola</h1>
+    <div id="app">
+        <h1>Mis Tareas</h1>
+        <form id="task-form" class="input-group">
+            <input type="text" id="task-input" placeholder="¿Qué hay que hacer?">
+            <button type="submit">Añadir</button>
+        </form>
+        <ul id="task-list"></ul>
+    </div>
+    <script type="module">
+        import { TaskModel } from './src/models/Task.js';
+        import { TaskView } from './src/views/TaskView.js';
+        
+        class TaskController {
+            constructor(model, view) {
+                this.model = model;
+                this.view = view;
+                
+                // Render inicial
+                this.view.render(this.model.tasks);
+                
+                // Enlazar eventos
+                this.view.bindEvents(
+                    (text) => { this.model.addTask(text); this.view.render(this.model.tasks); },
+                    (id) => { this.model.toggleTask(id); this.view.render(this.model.tasks); },
+                    (id) => { this.model.deleteTask(id); this.view.render(this.model.tasks); }
+                );
+            }
+        }
 
-    <script type="module" src="./src/main.js"></script>
+        const app = new TaskController(new TaskModel(), new TaskView());
+    </script>
 </body>
 </html>

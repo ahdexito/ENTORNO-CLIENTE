@@ -1,0 +1,26 @@
+{
+  "games": [
+    {
+      "id": "1",
+      "title": "Elden Ring",
+      "platform": "PC",
+      "rating": 5
+    },
+    {
+      "id": "2",
+      "title": "Zelda: TotK",
+      "platform": "Switch",
+      "rating": 5
+    },
+    {
+      "id": "6b60",
+      "title": "Hades",
+      "platform": "Todas"
+    },
+    {
+      "id": "445f",
+      "title": "God of War",
+      "platform": "PS5"
+    }
+  ]
+}

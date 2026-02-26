@@ -64,11 +64,10 @@ body {
     display: inline-block;
 }
 
-/* --- CORRECCIÓN DE CAMPOS RECORTADOS --- */
 .form-control {
     display: block;
     width: 100%;
-    height: calc(2.8rem + 2px); /* Altura fija para evitar recortes en Provincia */
+    height: calc(2.8rem + 2px);
     padding: 0.5rem 1rem;
     font-size: 1rem;
     line-height: 1.5;

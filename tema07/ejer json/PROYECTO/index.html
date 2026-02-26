@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Collector MVC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mi Colección de Juegos</h1>
+        <form id="game-form">
+            <input type="text" id="game-title" placeholder="Título del juego" required>
+            <input type="text" id="game-platform" placeholder="Plataforma (PS5, PC...)" required>
+            <button type="submit">Guardar</button>
+        </form>
+        <div id="game-grid"></div>
+    </div>
+
+    <script type="module">
+        import { GameModel } from './src/models/GameModel.js';
+        import { GameView } from './src/views/GameView.js';
+        import { GameController } from './src/controllers/GameController.js';
+
+        const app = new GameController(new GameModel(), new GameView());
+    </script>
+</body>
+</html>

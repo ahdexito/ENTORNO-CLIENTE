@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "email": "alumno@daw.com",
+      "password": "$2a$10$JHwpqIm9YdNzOtML1GiLY.j6X.VAsc5T5QA39dNf/RVlc8pfoBK.2",
+      "id": 1
+    }
+  ],
+  "games": [
+    {
+      "title": "Mario Bros",
+      "platform": "Switch",
+      "id": 1
+    },
+    {
+      "title": "God of War",
+      "platform": "PS5",
+      "id": 2
+    },
+    {
+      "title": "Mario Bros",
+      "platform": "Todas",
+      "id": 3
+    }
+  ]
+}

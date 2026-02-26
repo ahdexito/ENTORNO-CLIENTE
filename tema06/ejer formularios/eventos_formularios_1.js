@@ -1,100 +1,101 @@
-const formulario = document.getElementById("formulario");
-const divErrores = document.getElementById("errores");
+document.addEventListener("DOMContentLoaded", () => {
+    const formulario = document.getElementById("newEvent");
+    const contenedorErrores = document.getElementById("errores");
 
-const nombre = document.getElementById("nombre");
-const apellidos = document.getElementById("apellidos");
-const edad = document.getElementById("edad");
-const nif = document.getElementById("nif");
-const email = document.getElementById("email");
-const provincia = document.getElementById("provincia");
-const genero = document.getElementById("genero_h");
-const fecha = document.getElementById("fecha");
-
-formulario.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    divErrores.textContent = "";
-    let esValido = true;
-
-    // Obtener mensaje según error de validación
-    function getErrorMsg(campo, etiqueta) {
-
-        // VALIDAR CAMPO NO VACÍO
-        if (campo.validity.valueMissing) {
-
-            // (EJERCICIO 6)
-            if (etiqueta === "GENERO") { return `Debe seleccionar una opción de GÉNERO`; }
-
-            // (EJERCICIO 5)
-            if (etiqueta === "PROVINCIA") { return `Debe seleccionar una PROVINCIA de la lista.`; }
-
-            // (EJERCICIO 1)
-            return `El campo ${etiqueta} es obligatorio.`;
-        }
-
-        // VALIDAR PATRONES Y FORMATOS
-        if (!campo.validity.valid) {
-
-            // (EJERCICIO 7)
-            if (etiqueta === "FECHA") {
-                return "El formato de fecha debe ser dd/mm/aaaa o dd-mm-aaaa."; 
-            }
-
-            // VALIDAR NIF (EJERCICIO 3)
-            if (etiqueta === "NIF") {
-                return `El NIF debe tener 8 números y una letra`;
-            }
-
-            // VALIDAR EMAIL (EJERCICIO 4)
-            if (etiqueta === "EMAIL") {
-                return `El formato del EMAIL no es correcto.`
-            }
-
-            // VALIDAR PATRÓN NO NUMÉRICO (EJERCICIO 1)
-            if ((etiqueta === "NOMBRE" || etiqueta === "APELLIDOS") && campo.validity.patternMismatch) {
-                return `El campo ${etiqueta} solo debe contener letras.`;
-            }
-        }
-
-        // VALIDAR RANGO DE EDAD (EJERCICIO 2)
-        if (campo.validity.rangeUnderflow || campo.validity.rangeOverflow) {
-            return `El campo ${etiqueta} debe estar entre 0 y 105.`;
-        }
-
-        // VALIDAR CUALQUIER OTRO ERROR
-        if (!campo.validity.valid) {
-            return campo.validationMessage;
-        }
-
-        // Sin errores
-        return "";
-    }
-
-    // Validar campos de abajo hacia arriba para se haga foco al primero
-    const campos = [
-        {elem: fecha, nombre: "FECHA"},
-        {elem: genero, nombre: "GENERO"},
-        {elem: provincia, nombre: "PROVINCIA"},
-        {elem: email, nombre: "EMAIL"},
-        {elem: nif, nombre: "NIF"},
-        {elem: edad, nombre: "EDAD"},
-        {elem: apellidos, nombre: "APELLIDOS"},
+    formulario.addEventListener("submit", (evento) => {
+        // Limpiar estados previos
+        contenedorErrores.innerHTML = "";
+        let errores = [];
         
-    ];
+        // Quitamos la clase de error de TODOS los inputs, selectores y contenedores de radio
+        const todosLosInputs = document.querySelectorAll(".form-control, .form-check-input");
+        todosLosInputs.forEach(input => input.classList.remove("is-invalid"));
 
-    for (const campo of campos) {
-        const mensaje = getErrorMsg(campo.elem, campo.nombre);
+        // --- FUNCIONES DE APOYO ---
+        const marcarError = (elemento, mensaje) => {
+            errores.push(mensaje);
+            elemento.classList.add("is-invalid");
+            // Foco en el primer error
+            if (errores.length === 1) {
+                elemento.focus();
+            }
+        };
 
-        if (mensaje != "") {
-            divErrores.textContent = mensaje;
-            campo.elem.focus();
-            esValido = false;
-            break;
+        // --- VALIDACIONES ---
+
+        // 1. NOMBRE y APELLIDOS
+        const nombre = document.getElementById("name");
+        const apellidos = document.getElementById("surname");
+        if (nombre.value.trim() === "") marcarError(nombre, "El NOMBRE es obligatorio.");
+        if (apellidos.value.trim() === "") marcarError(apellidos, "Los APELLIDOS son obligatorios.");
+
+        // 2. EDAD (0-105)
+        const edad = document.getElementById("age");
+        const edadVal = parseInt(edad.value);
+        if (isNaN(edadVal) || edadVal < 0 || edadVal > 105) {
+            marcarError(edad, "La EDAD debe ser un número entre 0 y 105.");
         }
-    }
 
-    if (esValido) {
-        alert("Formulario enviado.");
-        formulario.submit();
-    }
+        // 3. NIF (Expresión Regular)
+        const nif = document.getElementById("nif");
+        // ^ (inicio), \d{8} (8 números), - (guion), [A-Z] (letra), $ (fin)
+        const regExNif = /^\d{8}-[A-Z]$/i; 
+        if (!regExNif.test(nif.value)) marcarError(nif, "NIF incorrecto (Ej: 12345678-Z).");
+
+        // 4. E-MAIL (Expresión Regular)
+        const email = document.getElementById("email");
+        // Valida estructura: texto @ texto . extensión
+        const regExEmail = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,6}$/;
+        if (!regExEmail.test(email.value)) marcarError(email, "E-MAIL no válido.");
+
+        // 5. PROVINCIA
+        const provincia = document.getElementById("province");
+        if (provincia.value === "") {
+            marcarError(provincia, "Debe seleccionar una PROVINCIA.");
+        }
+
+        // 6. SEXO / GÉNERO
+        const sexos = document.getElementsByName("sex");
+        let seleccionado = false;
+        sexos.forEach(r => { if (r.checked) seleccionado = true; });
+
+        if (!seleccionado) {
+            errores.push("Debe seleccionar un SEXO.");
+            // Marcamos ambos radios con el borde rojo de error
+            sexos.forEach(r => r.classList.add("is-invalid"));
+            if (errores.length === 1) sexos[0].focus();
+        }
+
+        // 7. FECHA (Expresión Regular)
+        const fecha = document.getElementById("date");
+        // ^\d{2} (día), [/-] (separador), \d{2} (mes), [/-] (separador), \d{4}$ (año)
+        const regExFecha = /^\d{2}[/-]\d{2}[/-]\d{4}$/;
+        if (!regExFecha.test(fecha.value)) marcarError(fecha, "FECHA inválida (dd/mm/aaaa).");
+
+        // 8. TELÉFONO (Expresión Regular)
+        const tlf = document.getElementById("phone");
+        // ^[679] (empieza por 6, 7 o 9), \d{8}$ (8 dígitos más)
+        const regExTlf = /^[679]\d{8}$/;
+        if (!regExTlf.test(tlf.value)) marcarError(tlf, "TELÉFONO inválido (9 dígitos, empieza por 6, 7 o 9).");
+
+        // 9. HORA (Expresión Regular)
+        const hora = document.getElementById("time");
+        // ^([01]\d|2[0-3]) (00-23), : (separador), [0-5]\d$ (00-59)
+        const regExHora = /^([01]\d|2[0-3]):[0-5]\d$/;
+        if (!regExHora.test(hora.value)) marcarError(hora, "HORA inválida (hh:mm).");
+
+        // 10. Bloqueo de envío
+        if (errores.length > 0) {
+            evento.preventDefault();
+            const lista = document.createElement("ul");
+            errores.forEach(texto => {
+                const li = document.createElement("li");
+                li.textContent = texto;
+                lista.appendChild(li);
+            });
+            contenedorErrores.appendChild(lista);
+        } else {
+            alert("¡Formulario enviado correctamente!");
+        }
+    });
 });
