@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Formulario</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulario de Registro</h1>
+    <form id="formularioRegistro" action="#" method="post" enctype="multipart/form-data">
+        <!-- Campos de texto -->
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required><br><br>
+
+        <label for="dni">DNI:</label>
+        <input type="text" id="dni" name="dni" required>
+        <div class="error"></div><br>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required>
+        <div class="error"></div><br>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="text" id="email" name="email" required>
+        <div class="error"></div><br>
+
+        <!-- Botones de opción de radio -->
+        <label for="sexo">Sexo:</label><br>
+        <input type="radio" id="hombre" name="sexo" value="hombre" required>
+        <label for="hombre">Hombre</label><br>
+
+        <input type="radio" id="mujer" name="sexo" value="mujer">
+        <label for="mujer">Mujer</label><br><br>
+
+        <!-- Cargar fotografía -->
+        <label for="fotografia">Fotografía:</label>
+        <input type="file" id="fotografia" name="fotografia" accept="image/*" required><br><br>
+
+        <!-- Casilla para recibir publicidad -->
+        <input type="checkbox" id="publicidad" name="publicidad">
+        <label for="publicidad">Quiero recibir publicidad</label><br><br>
+
+        <!-- Botones -->
+        <button type="submit">Guardar cambios</button>
+        <button type="reset">Borrar todo</button>
+    </form>
+
+    <script src="formulario.js"></script>
+</body>
+</html>

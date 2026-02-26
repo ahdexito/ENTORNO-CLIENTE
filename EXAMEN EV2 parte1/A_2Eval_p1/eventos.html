@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <style>
+        #caja {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            margin: 20px 0;
+        }
+
+        #contenedor {
+            width: 400px;
+            height: 200px;
+            border: 1px solid black;
+            margin: 20px 0;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>   
+</head>
+<body>
+    <h1>Manejo de Eventos</h1>
+
+    <!-- 1: Cambiar el texto al hacer clic -->
+    <h2>1: Cambiar Texto</h2>
+    <p id="texto">Este texto será modificado.</p>
+    <button id="boton">Haz clic aquí</button>
+
+    <!-- 2: Cambiar color al pasar el ratón -->
+    <h2>2: Cambiar Color al Pasar el Ratón</h2>
+    <div id="caja"></div>
+
+    <!-- 3: Mostrar coordenadas del ratón -->
+    <h2>3: Coordenadas del Ratón</h2>
+    <div id="contenedor">
+        <p id="coordenadas">Coordenadas: (0, 0)</p>
+    </div>
+
+    <!-- 4: Contador con botones -->
+    <h2>4: Contador</h2>
+    <p id="contador">0</p>
+    <button id="incrementar">Incrementar</button>
+    <button id="decrementar">Decrementar</button>
+    
+    <script src="eventos.js"></script>
+</body>
+</html>
