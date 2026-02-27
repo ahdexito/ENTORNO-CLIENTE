@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta de Personajes - Harry Potter</title>
+    <!-- Bootstrap CSS (local) -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+<body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Inicio</a>
+        <a class="navbar-brand" href="add-person.html">Añadir Personaje</a>
+    </nav>
+    <div class="container mt-5">
+        <h1>Alta de Personajes</h1>
+        <form id="formPerson" class="mx-auto" style="max-width: 600px;">
+            <!-- Campo Nombre del Personaje -->
+            <div class="mb-3">
+                <label for="nombre" class="form-label">
+                    Nombre: <span class="required">*</span>
+                </label>
+                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ejemplo: Harry Potter" required>
+            </div>
+
+            <!-- Campo Casa de Howarts -->
+            <div class="mb-3">
+                <label for="casa" class="form-label">
+                    Casa: <span class="required">*</span>
+                </label>
+                <select id="casa" name="casa" class="form-select" required>
+                    <option value="" disabled selected>Selecciona una casa</option>
+                    <option value="Gryffindor">Gryffindor</option>
+                    <option value="Slytherin">Slytherin</option>
+                    <option value="Hufflepuff">Hufflepuff</option>
+                    <option value="Ravenclaw">Ravenclaw</option>
+                </select>
+            </div>
+
+            <!-- Campo Patronus -->
+            <div class="mb-3">
+                <label for="patronus" class="form-label">
+                    Patronus: <span class="required">*</span>
+                </label>
+                <select id="patronus" name="patronus" class="form-select" required>
+                    <option value="" disabled selected>Selecciona un Patronus</option>
+                    <option value="Ciervo">Ciervo</option>
+                    <option value="Cierva">Cierva</option>
+                    <option value="Nutria">Nutria</option>
+                    <option value="Jack Russell Terrier">Jack Russell Terrier</option>
+                    <option value="Liebre">Liebre</option>
+                    <option value="Zorro">Zorro</option>
+                    <option value="Jabalí">Jabalí</option>
+                    <option value="Cisne">Cisne</option>
+                    <option value="Gato">Gato</option>
+                    <option value="Caballo">Caballo</option>
+                    <option value="Lobo">Lobo</option>
+                    <option value="Ave Fénix">Ave Fénix</option>
+                    <option value="Delfín">Delfín</option>
+                    <option value="Zorro Ártico">Zorro Ártico</option>
+                    <option value="Golondrina">Golondrina</option>
+                    <option value="Oso Pardo">Oso Pardo</option>
+                    <option value="Perro Pastor Escocés">Perro Pastor Escocés</option>
+                </select>
+            </div>
+
+            <!-- Campo Fecha de Nacimiento -->
+            <div class="mb-3">
+                <label for="fechaNacimiento" class="form-label">
+                    Fecha de Nacimiento: <span class="required">*</span>
+                </label>
+                <input type="date" id="fechaNacimiento" name="fechaNacimiento" class="form-control" required>
+            </div>
+
+            <!-- Campo Sangre -->
+            <div class="mb-3">
+                <label for="sangre" class="form-label">
+                    Estado de Sangre: <span class="required">*</span>
+                </label>
+                <select id="sangre" name="sangre" class="form-select" required>
+                    <option value="" disabled selected>Selecciona el estado de sangre</option>
+                    <option value="Sangre pura">Sangre pura</option>
+                    <option value="Mestiza">Mestiza</option>
+                    <option value="Hijo de muggles">Hijo de muggles</option>
+                </select>
+            </div>
+
+            <!-- Campo Varita -->
+            <div class="mb-3">
+                <label for="varita" class="form-label">Varita:</label>
+                <input type="text" id="varita" name="varita" class="form-control" placeholder="Ejemplo: Acebo, pluma de fénix, 11 pulgadas">
+            </div>
+
+            <!-- Botón de Enviar -->
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Dar de Alta</button>
+            </div>
+
+            <!-- Nota -->
+            <p class="text-muted mt-3">Los campos marcados con <span class="required">*</span> son obligatorios.</p>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS (local) -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="src/Mago.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personajes de Harry Potter</title>
+    <!-- Bootstrap CSS (local) -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  
+  <body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+      <a class="navbar-brand" href="index.html">Inicio</a>
+      <a class="navbar-brand" href="add-person.html">Añadir Personaje</a>
+    </nav>
+    <div class="container mt-5">
+      <h1>Lista de Personajes</h1>
+      <div class="row"  id="personsContainer">
+        <!-- Tarjeta visualización simplificada personajes -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Nombre Personaje</h5>
+              <p class="card-text">
+                <p>
+                  <strong>Casa: </strong>Casa Personaje
+                </p>
+                <p>
+                  <strong>Patronus: </strong>Patronus Personaje
+                </p>
+                <p>
+                  <strong>Fecha de Nacimiento: </strong>Fecha de Nacimiento del Personaje
+                </p>
+                <p>
+                  <strong>Estado de Sangre: </strong>Estado de Sangre del Personaje
+                </p>
+                <p>
+                  <strong>Varita: </strong>Varita del Personaje
+                </p>
+              </p>
+              <button class="btn btn-danger eliminar-btn">Eliminar</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </div>
+<!-- Bootstrap JS (local) -->
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="src/main.js"></script>
+</body>
+
+</html>

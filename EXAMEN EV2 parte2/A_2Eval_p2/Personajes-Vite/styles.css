@@ -1,0 +1,72 @@
+body {
+    background-color: #f5f7fa;
+}
+h1 {
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    color: #4b2e83;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.card-title {
+    color: #4b2e83;
+    font-weight: bold;
+}
+.card-text {
+    font-size: 0.9rem;
+}
+.badge {
+    font-size: 0.9rem;
+    padding: 0.4em 0.6em;
+}
+.badge-gryffindor {
+    background-color: #ae0001;
+    color: #fff;
+}
+.badge-slytherin {
+    background-color: #2a623d;
+    color: #fff;
+}
+.badge-hufflepuff {
+    background-color: #ffdb00;
+    color: #000;
+}
+.badge-ravenclaw {
+    background-color: #222f5b;
+    color: #fff;
+}
+
+
+form {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+label {
+    font-weight: bold;
+    color: #333;
+}
+label .required {
+    color: red;
+}
+.btn-primary {
+    background-color: #4b2e83;
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #3a2268;
+}
+.form-control:focus, .form-select:focus {
+    border-color: #4b2e83;
+    box-shadow: 0 0 5px rgba(75, 46, 131, 0.5);
+}
+.text-muted {
+    text-align: center;
+    font-size: 0.9rem;
+}
